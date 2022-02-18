@@ -23,7 +23,7 @@ class PostController extends Controller
         }
 
         // dd(request('search'));
-        return view('posts', [
+        return view('article.posts', [
             "title" => "All Posts" . $title,
             "active" => "posts",
             // "posts" => Post::all()
@@ -33,7 +33,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {  
-        return view('post', [
+        return view('article.post', [
             // title disini bukan judul post, tapi title dari halamannya
             "title" => "Single Post",
             "active" => "posts",

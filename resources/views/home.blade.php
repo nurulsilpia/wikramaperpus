@@ -1,4 +1,12 @@
 @extends('layouts.main')
-@section('container')
-    <h1>ini halaman home</h1>
+@section('content')
+    <section class="section">
+        <div class="section-header">
+            <h1>ini Dashboard</h1>
+        </div>
+
+        <div class="section-body">
+
+        </div>
+    </section>
 @endsection

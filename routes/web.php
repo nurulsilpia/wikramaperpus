@@ -26,22 +26,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "name" => "Roses Are Rosie",
-        "email" => "cutestChipmunk@gmail.com",
-        "image" => "rojeh.jpeg",
-        "title" => "About",
-        "active" => "about"
-    ]);
-});
-
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories', function() {
-    return view('categories', [
+    return view('article.categories', [
         'title' => 'Post Categoris',
         'active' => 'categories',
         'categories' => Category::all()
@@ -52,9 +42,6 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
-
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/dashboard', function(){
     return view('dashboard.index');

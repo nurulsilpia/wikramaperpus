@@ -1,11 +1,14 @@
 <div class="main-sidebar">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="/"> <img src="assets/img/logo.png" alt="logo" width="30"> Perpustakaan</a>
-    </div>
-    <div class="sidebar-brand sidebar-brand-sm">
-      <a href="/"><img src="assets/img/logo.png" alt="logo" class="img-fluid" width="30"></a>
-    </div>
+      <div class="media">
+       <img class=" ml-3 mr-0 mt-3" src="assets/img/logo.png" alt="logo" width="30">
+        <div class="media-body">
+           <h6 class="mt-4 mr-2">Perpustakaan Wikrama</h6>
+        </div>
+       </div>
+      </div>
+
     <ul class="sidebar-menu">
         <li class="menu-header">Main</li>
         <li class="nav-item dropdown">
@@ -58,7 +61,7 @@
             <a href="/profile" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
+            <a href="/admin/posts" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
           </li>
           <li class="nav-item dropdown">
             <a href="/profile" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>

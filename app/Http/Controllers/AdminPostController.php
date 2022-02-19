@@ -9,7 +9,7 @@ use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardPostController extends Controller
+class AdminPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        return view('dashboard.posts.index', [
+        return view('admin.posts.index', [
             'posts' => Post::where('user_id', auth()->user()->id)->get()
         ]);
     }
@@ -30,7 +30,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create', [
+        return view('admin.posts.create', [
             'categories' => Category::all()
         ]);
     }
@@ -60,7 +60,7 @@ class DashboardPostController extends Controller
 
         Post::create($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
+        return redirect('/admin/posts')->with('success', 'New post has been added!');
     }
 
     /**
@@ -71,7 +71,7 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('dashboard.posts.show', [
+        return view('admin.posts.show', [
             'post' => $post
         ]);
     }
@@ -84,7 +84,7 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.posts.edit', [
+        return view('admin.posts.edit', [
             'post' => $post,
             'categories' => Category::all()
         ]);
@@ -125,7 +125,7 @@ class DashboardPostController extends Controller
         Post::where('id', $post->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'Post has been edited!');
+        return redirect('/admin/posts')->with('success', 'Post has been edited!');
     }
 
     /**
@@ -142,7 +142,7 @@ class DashboardPostController extends Controller
 
         Post::destroy($post->id);
 
-        return redirect('/dashboard/posts')->with('danger', 'Post has been deleted!');
+        return redirect('/admin/posts')->with('danger', 'Post has been deleted!');
     }
 
     public function checkSlug(Request $request){

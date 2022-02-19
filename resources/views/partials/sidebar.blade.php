@@ -39,7 +39,7 @@
           <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
         </li>
 
-        
+        @if (auth()->user())
           <li class="menu-header">Member</li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
@@ -47,7 +47,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
           </li>
-        
+        @endif
         
         @can('admin')
           <li class="menu-header">Administator</li>

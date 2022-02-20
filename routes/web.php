@@ -19,12 +19,63 @@ use App\Http\Controllers\AdminPostController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home",
-        "active" => "home"
+//dashboard
+Route::get('main', function () {
+    return view('dashboard/home', [
+        "title" => "dashboard/home",
+        "active" => "dashboard/home"
     ]);
 });
+
+Route::get('buku-terbaru', function () {
+    return view('dashboard/buku_terbaru', [
+        "title" => "dashboard/buku_terbaru",
+        "active" => "dashboard/buku_terbaru"
+    ]);
+});
+
+Route::get('buku-terlaris', function () {
+    return view('dashboard/buku_terlaris', [
+        "title" => "dashboard/buku_terlaris",
+        "active" => "dashboard/buku_terlaris"
+    ]);
+});
+
+
+
+//e-book
+Route::get('ebook', function () {
+    return view('ebook/ebook', [
+        "title" => "ebook/ebook",
+        "active" => "ebook/ebook"
+    ]);
+});
+
+//profile
+Route::get('profile-perpust', function () {
+    return view('profile/profile', [
+        "title" => "profile/profile",
+        "active" => "profile/profile"
+    ]);
+});
+
+//galery
+Route::get('galery', function () {
+    return view('galery/galery', [
+        "title" => "galery/galery",
+        "active" => "galery/galery"
+    ]);
+});
+
+//sirkulasi
+Route::get('sirkulasi', function () {
+    return view('sirkulasi/sirkulasi', [
+        "title" => "sirkulasi/sirkulasi",
+        "active" => "sirkulasi/sirkulasi"
+    ]);
+});
+
+
 
 Route::get('/posts', [PostController::class, 'index']);
 

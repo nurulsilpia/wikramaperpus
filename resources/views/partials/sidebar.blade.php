@@ -12,43 +12,44 @@
     <ul class="sidebar-menu">
         <li class="menu-header">Main</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
+          <a href="/" class="nav-link has-dropdown"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="index-0.html">Buku Terbaru</a></li>
-            <li><a class="nav-link" href="index.html">Buku Terlaris</a></li>
+          <li><a class="nav-link" href="/main">Main</a></li>
+            <li><a class="nav-link" href="/buku-terbaru">Buku Terbaru</a></li>
+            <li><a class="nav-link" href="/buku-terlaris">Buku Terlaris</a></li>
           </ul>
         </li>
 
         <li class="menu-header">Content</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="bi bi-book-half"></i></i> <span>Ebook</span></a>
+          <a href="/ebook" class="nav-link has-dropdown" data-toggle="dropdown"><i class="bi bi-book-half"></i></i> <span>Ebook</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="layout-default.html">Buku Novel</a></li>
-            <li><a class="nav-link" href="layout-transparent.html">Buku Biografi</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Buku Pembelajaran</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Buku Fiksi</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Kamus</a></li>
-            <li><a class="nav-link" href="layout-top-navigation.html">Ensiklopedi</a></li>
+            <li><a class="nav-link" href="/ebook">Buku Novel</a></li>
+            <li><a class="nav-link" href="/ebook">Buku Biografi</a></li>
+            <li><a class="nav-link" href="/ebook">Buku Pembelajaran</a></li>
+            <li><a class="nav-link" href="/ebook">Buku Fiksi</a></li>
+            <li><a class="nav-link" href="/ebook">Kamus</a></li>
+            <li><a class="nav-link" href="/ebook">Ensiklopedi</a></li>
           </ul>
         </li>
         <li class="menu-header">News</li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+          <a href="/profile-perpust" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
         </li>
         <li class="nav-item dropdown">
           <a href="/posts" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
+          <a href="/galery" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
         </li>
 
         
           <li class="menu-header">Member</li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
+            <a href="/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
+            <a href="/library" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
           </li>
         
         

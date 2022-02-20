@@ -36,7 +36,7 @@
           <a href="#" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a href="/posts" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
+          <a href="/posts" class="nav-link {{ Request::is('/posts') ? 'active' : '' }}"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
@@ -55,22 +55,30 @@
         @can('admin')
           <li class="menu-header">Administator</li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-book-half"></i></i><span>Ebook</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Data Buku</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="#">Ebook</a></li>
+              <li><a class="nav-link" href="#">Buku Fisik</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
             <a href="/profile" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="/admin/posts" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
+            <a href="/admin/posts" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link {{ Request::is('admin/posts*') ? 'active' : '' }}" href="/admin/posts">Article</a></li>
+              <li><a class="nav-link" href="/admin/categories">Category</a></li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
+            <a href="#" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
+            <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
+            <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
         @endcan
       </ul>

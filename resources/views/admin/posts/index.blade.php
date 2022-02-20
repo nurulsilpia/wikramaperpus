@@ -1,25 +1,25 @@
 @extends('layouts.main')
 @section('content')
 <section class="section">
-  <div class="section-header">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">My Posts</h1>
-    </div>
+  <div class="section-header d-block">
+    <div class="border-bottom mb-3">
+        <h1 class="h2">My Article</h1>
     </div>
     
+    
     @if(session()->has('success'))
-      <div class="alert alert-success col-lg-8" role="alert">
+      <div class="alert alert-success col-lg-10" role="alert">
         {{ session('success') }}
       </div>
     @endif
 
     @if(session()->has('danger'))
-      <div class="alert alert-danger col-lg-8" role="alert">
+      <div class="alert alert-danger col-lg-10" role="alert">
         {{ session('danger') }}
       </div>
     @endif
 
-    <div class="table-responsive col-lg-8">
+    <div class="table-responsive col-lg-10">
       <a href="/admin/posts/create" class="btn btn-primary mb-3">Create new post</a>
         <table class="table table-striped table-sm">
           <thead>
@@ -37,18 +37,18 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->category->name }}</td>
                 <td>
-                    <a href="/admin/posts/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                    <a href="/admin/posts/{{ $post->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                    <a href="/admin/posts/{{ $post->slug }}" class="badge bg-info text-white"><i class="bi bi-eye"></i></span></a>
+                    <a href="/admin/posts/{{ $post->slug }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
                     <form action="/admin/posts/{{ $post->slug }}" method="post" class="d-inline">
                       @method('delete')
                       @csrf
-                      <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="trash-2"></span></button>
+                      <button class="badge bg-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>
                     </form>
                 </td>
                 </tr>
             @endforeach
           </tbody>
         </table>
-
+      </div>
   </section>
 @endsection

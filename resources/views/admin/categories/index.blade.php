@@ -48,7 +48,7 @@
                 </tr>
 
                 {{-- Update Modal --}}
-                <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" style="z-index : 1050 !important;" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">

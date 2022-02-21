@@ -18,6 +18,7 @@ class AdminPostController extends Controller
      */
     public function index()
     {
+
         return view('admin.posts.index', [
             'posts' => Post::where('user_id', auth()->user()->id)->get()
         ]);

@@ -20,7 +20,7 @@ use App\Http\Controllers\AdminPostController;
 */
 
 //dashboard
-Route::get('main', function () {
+Route::get('/', function () {
     return view('dashboard/home', [
         "title" => "dashboard/home",
         "active" => "dashboard/home"

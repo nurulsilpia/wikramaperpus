@@ -34,7 +34,6 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <a href="/admin/categories/{{ $category->slug }}" class="badge bg-info text-white"><i class="bi bi-eye"></i></span></a>
                     <a href="/admin/categories/{{ $category->slug }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
                     <form action="/admin/categories/{{ $category->slug }}" method="post" class="d-inline">
                       @method('delete')

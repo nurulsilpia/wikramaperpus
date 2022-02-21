@@ -96,10 +96,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/admin', function(){
     return view('admin.index');
-})->middleware('auth');
+})->middleware('admin');
 
-Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/posts', AdminPostController::class)->middleware('auth');
+Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
+Route::resource('/admin/posts', AdminPostController::class)->middleware('admin');
 
 Route::get('/admin/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/categories', AdminCategoryController::class)->except('show')->middleware('admin');

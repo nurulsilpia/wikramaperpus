@@ -3,7 +3,7 @@
 
     <section class="section ">
         <div class="section-header">
-         <h5 class="text-dark">Selamat datang di E-book, Selamat membaca....</h5>
+         <h1 class="text-dark">Selamat datang di E-book, Selamat membaca....</h1>
         </div>
         <h5>Buku Novel</h5>
         <div class="section-header">

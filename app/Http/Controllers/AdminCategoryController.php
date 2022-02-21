@@ -96,4 +96,6 @@ class AdminCategoryController extends Controller
 
         return redirect('/admin/categories')->with('danger', 'Post has been deleted!');
     }
+
+
 }

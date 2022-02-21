@@ -11,7 +11,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Name Category</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('title') }}">
                     @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -37,29 +37,11 @@
     const name = document.querySelector('#name');
     const slug = document.querySelector('#slug');
 
-    title.addEventListener('change', function() {
+    name.addEventListener('change', function() {
         fetch('/admin/categories/checkSlug?name=' + name.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });
-
-    document.addEventListener('trix-file-accept', function(e){
-        e.preventDefault();
-    });
-
-    function previewImage() {
-        const image = document.querySelector('#image');
-        const imgPreview = document.querySelector('.img-preview');
-
-        imgPreview.style.display = 'block';
-
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src =oFREvent.target.result;
-        }
-    }
     
 </script>
 @endsection

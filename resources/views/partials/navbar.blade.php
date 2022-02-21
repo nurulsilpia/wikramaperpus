@@ -22,7 +22,7 @@
       @else
       <li>
         <div class="dropdown-menu dropdown-menu-right">
-          <li class="bg-light p-2 rounded"><a href="/login"><i class="bi bi-box-arrow-in-right"></i> login</a></li>
+          <li class="bg-light p-2 rounded"><a href="/login" class="p-2"><i class="bi bi-box-arrow-in-right"></i> login</a></li>
         </div>
       </li>
       @endauth

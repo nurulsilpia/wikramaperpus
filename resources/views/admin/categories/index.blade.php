@@ -34,7 +34,11 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <a href="/admin/categories/{{ $category->slug }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
+                    {{-- <a href="/admin/categories/{{ $category->slug }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a> --}}
+                    <button type="button" class="badge bg-warning border-0 text-white" data-bs-toggle="modal" data-bs-target="#updateModal">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+
                     <form action="/admin/categories/{{ $category->slug }}" method="post" class="d-inline">
                       @method('delete')
                       @csrf
@@ -42,10 +46,59 @@
                     </form>
                 </td>
                 </tr>
+
+                {{-- Update Modal --}}
+                <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form action="/dashboard/categories/{{ $category->id }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                          <div class="mb-3">
+                            <label for="name" class="form-label">Category</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="nameEdit" value="{{ old('name', $category->name) }}" autofocus>
+                            @error('name')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>
+                          <div class="mb-3">
+                            <label for="slug" class="form-label">Slug</label>
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" id="slugEdit" value="{{ old('slug', $category->slug) }}">
+                            @error('slug')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Create Category</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
             @endforeach
           </tbody>
         </table>
     </div>
   </div>
 </section>
+
+<script>
+  const nameEdit = document.querySelector('#nameEdit');
+    const slugEdit = document.querySelector('#slugEdit');
+    nameEdit.addEventListener('change', function(){
+        fetch('/dashboard/categories/checkSlug?name=' + nameEdit.value)
+        .then(response => response.json())
+        .then(data => slugEdit.value = data.slug)
+    })
+</script>
 @endsection

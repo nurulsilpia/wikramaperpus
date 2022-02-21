@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminCategoryController extends Controller
@@ -43,7 +42,7 @@ class AdminCategoryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required|unique:posts'
+            'slug' => 'required|unique:categories'
         ]);
 
         Category::create($validatedData);
@@ -82,7 +81,19 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $rules = [
+            'name' => "required",
+        ];
+
+        if ($request->slug != $category->slug) {
+            $rules['slug'] = "required|unique:categories";
+        }
+
+        $validatedData = $request->validate($rules);
+
+        Category::where('id', $category->id)->update($validatedData);
+
+        return redirect('/admin/categories')->with('success', 'Post has been updated!');
     }
 
     /**
@@ -96,5 +107,10 @@ class AdminCategoryController extends Controller
         Category::destroy($category->id);
 
         return redirect('/admin/categories')->with('danger', 'Post has been deleted!');
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->name);
+        return response()->json(['slug' => $slug]);
     }
 }

@@ -50,7 +50,7 @@
                 <div class="row">
                     @foreach ($posts->skip(1) as $post)
                         <div class="col-md-4 mb-3">
-                            <div class="card">
+                            <div class="card h-100">
                                 <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
                                     <a href="/posts?category={{ $post->category->slug }}" class="text-white">{{ $post->category->name }}</a>
                                 </div>

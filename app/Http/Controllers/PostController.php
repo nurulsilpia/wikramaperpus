@@ -22,7 +22,7 @@ class PostController extends Controller
             $title = ' in ' . $author->name;
         }
 
-        // dd(request('search'));
+        
         return view('article.posts', [
             "title" => "All Posts" . $title,
             "active" => "posts",

@@ -46,6 +46,12 @@ dijangkau oleh peserta didik, pendidik dan tenaga kependidikan. Semenjak didirik
 perpustakaan SMK Wikrama Bogor memberikan manfaat bagi sivitas akademik sekolah bahkan masyarakat 
 sekitar sekolah</li>
                 </div>
+                <div>
+                 <p class="lead">
+                    visi,Misi Dan Motto Perpustakaan
+                </p>
+                    
+                </div>
         </div>
     </section>
 @endsection

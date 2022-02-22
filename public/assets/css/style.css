@@ -2986,3 +2986,21 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
       z-index: -1 !important;
     }
     
+    .text-small {
+      font-size: 0.9rem;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    a:hover, a:focus {
+      text-decoration: none;
+    }
+    
+    footer {
+      background: #212529;
+    }
+    

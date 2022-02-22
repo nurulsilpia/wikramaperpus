@@ -4,7 +4,7 @@
       <div class="media">
        <img class=" ml-3 mr-0 mt-3" src="assets/img/logo.png" alt="logo" width="30">
         <div class="media-body">
-           <h6 class="mt-4 mr-2">Perpustakaan Wikrama</h6>
+           <h6 class="mt-4 mr-2 text-dark">Perpustakaan Wikrama</h6>
         </div>
        </div>
       </div>
@@ -16,7 +16,7 @@
           <ul class="dropdown-menu">
           <li><a class="nav-link" href="/">Main</a></li>
             <li><a class="nav-link" href="/buku-terbaru">Buku Terbaru</a></li>
-            <li><a class="nav-link" href="/buku-terlaris">Buku Terlaris</a></li>
+            <li><a class="nav-link" href="/buku-terlaris">Buku peminat terbanyak</a></li>
           </ul>
         </li>
 
@@ -60,7 +60,7 @@
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="#">Main</a></li>
               <li><a class="nav-link" href="#">Buku terbaru</a></li>
-              <li><a class="nav-link" href="#">Buku terlaris</a></li>
+              <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

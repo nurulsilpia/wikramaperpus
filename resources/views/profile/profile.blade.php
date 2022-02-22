@@ -4,6 +4,7 @@
         <div class="section-header">
             <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
         </div>
+
         <div class="card mb-3">
         <img src="	assets/img/wk.jpg"  height="500px" alt="desain web">
         
@@ -32,9 +33,11 @@
         <br>
         <hr>
         <br>
+
                 <div>
                 <h4 class="text-primary">
                     Sejarah Perpustakaan
+
                 </h4>
                 <li>Perpustakaan SMK Wikrama Bogor berada di Kampus SMK Wikrama Bogor Kelurahan Sindangsari, 
 Kecamatan Bogor Timur, Kota Bogor didirikan pada tahun 1996.  Secara fisik perpustakaan sekolah 
@@ -43,11 +46,13 @@ berada di area bangunan seluas 96 m2. Lokasi ini berada di pusat kegiatan pembel
 dijangkau oleh peserta didik, pendidik dan tenaga kependidikan. Semenjak didirikan, keberadaan ruang 
 perpustakaan SMK Wikrama Bogor memberikan manfaat bagi sivitas akademik sekolah bahkan masyarakat 
 sekitar sekolah</li>
+
                 </div>
                 <br>
                 <hr>
                 <br>
                 <div>
+
                  <h4 class="text-primary">
                     Visi,Misi Dan Motto Perpustakaan Serta Sasaran
                 </h4>
@@ -82,5 +87,6 @@ sekitar sekolah</li>
                 </div>
             </div>
         </div>
+
     </section>
 @endsection

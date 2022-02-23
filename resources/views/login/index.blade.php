@@ -34,8 +34,8 @@
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="email" name="email" placeholder="Email" id="email" class="@error('email') is-invalid @enderror" autofocus required value="{{ old('email') }}"/>
-              @error('email')
+              <input type="text" name="username" placeholder="Username" id="username" class="@error('username') is-invalid @enderror" autofocus required value="{{ old('username') }}"/>
+              @error('username')
                 <div class="invalid-feedback">
                   {{ $message }}
                 </div>

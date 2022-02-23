@@ -96,7 +96,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/admin', function(){
     return view('admin.index');
-})->middleware('admin');
+});
 
 Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/admin/posts', AdminPostController::class)->middleware('admin');

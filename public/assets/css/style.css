@@ -3004,3 +3004,34 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
       background: #212529;
     }
     
+    .clockdate-wrapper {
+      background-color: #333;
+      padding:25px;
+      max-width:400px;
+      width:100%;
+      text-align:center;
+      border-radius:5px;
+      margin:0 auto;
+    
+  }
+  #clock{
+      background-color:#333;
+      font-family: sans-serif;
+      font-size:40px;
+      text-shadow:0px 0px 1px #fff;
+      color:#fff;
+  }
+  #clock span {
+      color:#888;
+      text-shadow:0px 0px 1px #333;
+      font-size:30px;
+      position:relative;
+      top:-5px;
+      left:10px;
+  }
+  #date {
+      letter-spacing:3px;
+      font-size:10px;
+      font-family:arial,sans-serif;
+      color:#fff;
+  }

@@ -3030,7 +3030,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
       left:10px;
   }
   #date {
-      letter-spacing:3px;
+      letter-spacing:0px;
       font-size:10px;
       font-family:arial,sans-serif;
       color:#fff;

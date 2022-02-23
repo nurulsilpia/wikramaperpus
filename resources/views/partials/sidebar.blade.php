@@ -48,9 +48,6 @@
           <li class="nav-item dropdown">
             <a href="/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a href="/library" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
-          </li>
         @endif
         
         @can('admin')
@@ -58,7 +55,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="#">Main</a></li>
+              <li><a class="nav-link" href="/main/mainpost">Main</a></li>
               <li><a class="nav-link" href="#">Buku terbaru</a></li>
               <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
@@ -83,6 +80,6 @@
             <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
         @endcan
-      </ul>
+      </ul><br><br><br><br>
   </aside>
 </div>

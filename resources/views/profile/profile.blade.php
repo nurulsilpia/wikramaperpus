@@ -2,11 +2,11 @@
 @section('content')
 <section class="section">
     <div class="section-header d-block">
-        <div class="mb-5 text-center">
+        <div class="mb-4 text-center">
             <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
         </div>
 
-        <img src="assets/img/profile.png" class="img-fluid rounded mx-auto d-block" height="500px" alt="desain web">
+        <img src="assets/img/profile.png" class="img-fluid rounded d-block px-5" height="500px" alt="desain web">
         
         <div class="px-5 mt-5">
             <h4 class=" text-primary">Identitas Perpustakaan</h4>
@@ -100,17 +100,17 @@
             </table>
         </div>
 
-        <hr>
+        <hr><br>
         <div class="mb-5 px-5">
             <h4 class="text-primary">Sejarah Perpustakaan</h4>
             <p class="text-justify">
                 Perpustakaan SMK Wikrama Bogor berada di Kampus SMK Wikrama Bogor Kelurahan Sindangsari, Kecamatan Bogor Timur, Kota Bogor didirikan pada tahun 1996.  Secara fisik perpustakaan sekolah terletak di lantai 2 (dua) gedung Pajajaran yang merupakan gedung pertama yang dibangun, tepatnya berada di area bangunan seluas 96 m2. Lokasi ini berada di pusat kegiatan pembelajaran yang mudah dijangkau oleh peserta didik, pendidik dan tenaga kependidikan. Semenjak didirikan, keberadaan ruang perpustakaan SMK Wikrama Bogor memberikan manfaat bagi sivitas akademik sekolah bahkan masyarakat sekitar sekolah
             </p>
         </div>
-        <hr>
+        <hr><br>
 
         <div class="mb-5 px-5">
-            <h4 class="text-primary">Visi,Misi Dan Motto Perpustakaan Serta Sasaran</h4>
+            <h4 class="text-primary">Visi,Misi Dan Motto Perpustakaan Serta Sasaran</h4><br>
             <h6 class="text-dark"> Visi : </h6>
             <ul>
                 <li>Menjadi perpustakaan sekolah teladan berbasis Teknologi Informasi dan Komunikasi</li>
@@ -124,7 +124,7 @@
 
             <h6 class="text-dark"> Motto : </h6>
             <blockquote class="blockquote text-italic">
-                <p>Melayani dengan Hati dan Teknologi</p>
+                <p class="mt-2">Melayani dengan Hati dan Teknologi "</p>
             </blockquote>
 
             <h6 class="text-dark">Sasaran : </h6>
@@ -136,7 +136,7 @@
             </ol>
         </div>
         
-        <hr>
+        <hr><br>
         <div class="mb-5 px-5">
             <h4 class="text-primary">Struktur Organisasi</h4>
             <img class="" src="assets/img/org.png"  height="400px" alt="desain web">

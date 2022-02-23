@@ -37,7 +37,7 @@
         @yield('content')
       </div>
       <footer class="main-footer">
-      <div class="row gy-4 gx-5">
+      <div class="row gy-4 gx-5 mt-3">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="h4 text-white">Mitra Kami  </h5><br>
                     <ul class="list-unstyled text-muted">
@@ -56,8 +56,8 @@
                         <br><li><a href="#">(0251) 8242411</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Clock </h5><br>
+                <div class="col-lg-5 col-md-6">
+               <br>
                     <body onload="startTime()">
                         <div id="clockdate">
                             <div class="clockdate-wrapper">

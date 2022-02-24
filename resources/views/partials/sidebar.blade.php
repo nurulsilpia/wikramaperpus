@@ -56,9 +56,9 @@
         @can('admin')
           <li class="menu-header">Administator</li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="#">Main</a></li>
+              <li><a class="nav-link" href="/admin">Main</a></li>
               <li><a class="nav-link" href="#">Buku terbaru</a></li>
               <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
@@ -80,7 +80,17 @@
             <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>
           <li class="nav-item dropdown">
+            <a href="/admin" class="nav-link has-dropdown"><i class="bi bi-book-half"></i></i><span>Books</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="#">Books Data</a></li>
+              <li><a class="nav-link" href="/admin/categories-book">Category Book </a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
             <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link"><i class="bi bi-person-circle"></i><span>Users Data</span></a>
           </li>
         @endcan
       </ul>

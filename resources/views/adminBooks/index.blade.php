@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('layouts.main')
 @section('content')
 
 <section class="section">
@@ -19,16 +19,20 @@
     </div>
     @endif
 
-
-    <div class="table-responsive col-lg-10">
+    <div class="table-responsive col-lg-15">
       <a href="/admin/dashboard/create" class="btn btn-primary mb-0">Create new post</a>
-        <table class="table table-striped table-sm">
+        <table class="table table-striped table-sm" id="tableAll">
           <thead>
             <tr>
               <th scope="col">No</th>
               <th scope="col">Judul</th>
               <th scope="col">Pengarang</th>
               <th scope="col">Penerbit</th>
+              <th scope="col">Tahun Terbit</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Jumlah Buku</th>
+              <th scope="col">Lokasi</th>
+              <th scope="col">Tanggal Input</th>
               <th scope="col" colspan="2">Action</th>
             </tr>
           </thead>
@@ -38,11 +42,13 @@
                 <td> {{ $book->judul }}</td>
                 <td> {{ $book->pengarang }}</td>
                 <td> {{ $book->penerbit }}</td>
+                <td> {{ $book->tahun_terbit }}</td>
+                <td> {{ $book->isbn }}</td>
+                <td> {{ $book->jumlah_buku }}</td>
+                <td> {{ $book->lokasi }}</td>
+                <td> {{ $book->tanggal_input }}</td>
                 <td>
                 <a href="/admin/dashboard" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
-                      {{-- <button type="button" class="badge bg-warning border-0 text-white" data-bs-toggle="modal" data-bs-target="#updateModal">
-                        <i class="bi bi-pencil-square"></i>
-                      </button> --}}
 
                       <form action="/admin/dashboard/{{ $book->books }}" method="post" class="d-inline">
                         @method('delete')
@@ -53,6 +59,8 @@
                 </tr>
                 
            @endforeach
-  </div> 
+        </table>
+    </div>
+  </div>
 </section>
 @endsection

@@ -77,6 +77,13 @@
             <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>
           <li class="nav-item dropdown">
+            <a href="#" class="nav-link has-dropdown"><i class="bi bi-book-half"></i></i><span>Books</span></a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="/admin/books">Data Buku</a></li>
+              <li><a class="nav-link" href="">Kategori Buku</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
             <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
         @endcan

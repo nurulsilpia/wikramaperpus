@@ -108,6 +108,6 @@ Route::get('/admin/categories/checkSlug', [AdminCategoryController::class, 'chec
 Route::resource('/admin/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 
-Route::resource('/admin/dashboard', BooksController::class)->middleware('admin');
+Route::resource('/admin/books', BooksController::class)->middleware('admin');
 
 Route::resource('/admin/categories-book', CategoryBookController::class)->middleware('admin');

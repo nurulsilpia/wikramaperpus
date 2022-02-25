@@ -5,7 +5,6 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CategoryBookController;
@@ -97,17 +96,21 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/admin', function(){
-    return view('admin.index');
+// Reoute khusus Admin
+Route::prefix('admin')->group(function () {
+    Route::get('/', function(){
+        return view('admin.index');
+    });
+    
+    Route::get('/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
+    Route::resource('/posts', AdminPostController::class)->middleware('admin');
+    
+    Route::get('/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('admin');
+    Route::resource('/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+    
+    Route::resource('/books', BooksController::class)->middleware('admin');
+    Route::resource('/category-books', CategoryBookController::class)->middleware('admin');
 });
 
-Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
-Route::resource('/admin/posts', AdminPostController::class)->middleware('admin');
-
-Route::get('/admin/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/admin/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 
-Route::resource('/admin/books', BooksController::class)->middleware('admin');
-
-Route::resource('/admin/categories-book', CategoryBookController::class)->middleware('admin');

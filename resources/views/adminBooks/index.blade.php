@@ -20,7 +20,7 @@
     @endif
 
     <div class="table-responsive col-lg-15">
-      <a href="/admin/books/create" class="btn btn-primary mb-0">Create new post</a>
+      <a href="/admin/books/create" class="btn btn-primary mb-3">Create new post</a>
         <table class="table table-striped table-sm" id="tableAll">
           <thead>
             <tr>

@@ -13,7 +13,7 @@ class CategoryBookController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminCategoryBooks.index');
     }
 
     /**

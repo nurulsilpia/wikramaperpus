@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('layouts.main')
 @section('content')
 
 <section class="section">
@@ -12,7 +12,7 @@
                 @csrf
                 <div class="mb-3">
                 <label for="judul" class="form-label">Title</label>
-                <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" required autofocus value="{{ old('judul', $book->judul)) }}">
+                <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" required autofocus value="{{ old('judul', $book->judul) }}">
                 @error('judul')
                     <div class="invalid-feedback">
                         {{ $message }}

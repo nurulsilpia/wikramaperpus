@@ -49,8 +49,8 @@
                 <td> {{ $book->lokasi }}</td>
                 <td> {{ $book->tanggal_input }}</td>
                 <td>
-                  <a href="/admin/books/{{ $book->id }}" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/admin/books/{{ $book->id }}/edit" method="post" class="d-inline">
+                  <a href="/admin/books/{{ $book->id }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
+                      <form action="/admin/books/{{ $book->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>

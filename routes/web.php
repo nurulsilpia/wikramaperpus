@@ -96,7 +96,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Reoute khusus Admin
+// Route khusus Admin
 Route::prefix('admin')->group(function () {
     Route::get('/', function(){
         return view('admin.index');

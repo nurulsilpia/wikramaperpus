@@ -46,7 +46,8 @@ class BooksController extends Controller
             'isbn' => 'required',
             'jumlah_buku' => 'required',
             'lokasi' => 'required',
-            'tanggal_input' => 'required'
+            'tanggal_input' => 'required',
+            'image' => 'image|file|max:1024'
         ]);
 
         if($request->file('image')) {

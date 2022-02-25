@@ -42,9 +42,7 @@ class CategoryBookController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            
             'name' => 'required'
-           
         ]);
 
         CategoryBook::create($validatedData);
@@ -83,9 +81,17 @@ class CategoryBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CategoryBook $categoryBook)
     {
-        //
+        $rules = [
+            'name' => "required",
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        CategoryBook::where('id', $categoryBook->id)->update($validatedData);
+
+        return redirect('/admin/category-books')->with('success', 'Category book has been updated!');
     }
 
     /**

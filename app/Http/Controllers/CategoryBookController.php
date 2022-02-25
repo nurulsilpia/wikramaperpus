@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
+use App\Models\CategoryBook;
 
 class CategoryBookController extends Controller
 {
@@ -13,7 +15,9 @@ class CategoryBookController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminCategoryBooks.index',[
+            'categoryBooks' => CategoryBook::all()
+        ]);
     }
 
     /**
@@ -23,7 +27,10 @@ class CategoryBookController extends Controller
      */
     public function create()
     {
-        //
+        {
+            return view('adminCategoryBooks.create');
+        }
+    
     }
 
     /**
@@ -34,7 +41,15 @@ class CategoryBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            
+            'name' => 'required'
+           
+        ]);
+
+        CategoryBook::create($validatedData);
+
+        return redirect('/admin/category-books')->with('success', 'kategori berhasil dibuat');
     }
 
     /**
@@ -54,9 +69,11 @@ class CategoryBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CategoryBook $categoryBook)
     {
-        //
+        return view('adminCategoryBooks.edit', [
+            'categoryBook' => $categoryBook
+        ]);
     }
 
     /**
@@ -77,8 +94,9 @@ class CategoryBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CategoryBook $categoryBook )
     {
-        //
+        CategoryBook::destroy($categoryBook->id);
+        return redirect('/admin/category-books')->with('delete', 'post berhasil dihapus');
     }
 }

@@ -4,7 +4,7 @@
 <section class="section">
   <div class="section-header d-block">
     <div class="border-bottom mb-3">
-      <h1 class="h2 mb-2">Post Main Books</h1>
+      <h1 class="h2 mb-2">Data Buku</h1>
     </div>
 
     @if(session()->has('success'))
@@ -20,7 +20,7 @@
     @endif
 
     <div class="table-responsive col-lg-15">
-      <a href="/admin/dashboard/create" class="btn btn-primary mb-0">Create new post</a>
+      <a href="/admin/books/create" class="btn btn-primary mb-0">Create new post</a>
         <table class="table table-striped table-sm" id="tableAll">
           <thead>
             <tr>
@@ -36,8 +36,9 @@
               <th scope="col" colspan="2">Action</th>
             </tr>
           </thead>
-        @foreach( $books as $book)
-                <tr>
+          <tbody>
+            @foreach( $books as $book)
+            <tr>
                 <td> {{ $loop->iteration }} </td>
                 <td> {{ $book->judul }}</td>
                 <td> {{ $book->pengarang }}</td>
@@ -48,17 +49,16 @@
                 <td> {{ $book->lokasi }}</td>
                 <td> {{ $book->tanggal_input }}</td>
                 <td>
-                <a href="/admin/dashboard" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
-
-                      <form action="/admin/dashboard/{{ $book->books }}" method="post" class="d-inline">
+                  <a href="/admin/books/{{ $book->id }}" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
+                      <form action="/admin/books/{{ $book->id }}/edit" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="badge bg-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>
                       </form>
-                      </td>
-                </tr>
-                
-           @endforeach
+                </td>
+            </tr>
+            @endforeach
+          </tbody>
         </table>
     </div>
   </div>

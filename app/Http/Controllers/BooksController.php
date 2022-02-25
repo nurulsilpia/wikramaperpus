@@ -26,7 +26,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('admin.dashboard.create');
+        return view('adminBooks.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class BooksController extends Controller
 
         Book::create($validatedData);
 
-        return redirect('/admin/dashboard')->with('success', 'post berhasil dibuat');
+        return redirect('/admin/books')->with('success', 'post berhasil dibuat');
     }
 
     /**
@@ -66,9 +66,9 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        return view('admin.dashboard', [
-            'books' => $book
-        ]);
+        // return view('admin.dashboard', [
+        //     'books' => $book
+        // ]);
     }
 
 
@@ -78,9 +78,11 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $book)
     {
-        //
+        return view('adminBooks.edit', [
+            'book' => $book
+        ]);
     }
 
     /**
@@ -90,9 +92,26 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        $rules = [
+            'judul' => 'required|max:255',
+            'pengarang' => 'required',
+            'penerbit' => 'required',
+            'image' => 'image|file|max:1024',
+            'tahun_terbit' => 'required',
+            'isbn' => 'required',
+            'jumlah_buku' => 'required',
+            'lokasi' => 'required',
+            'tanggal_input' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+        
+        Book::where('id', $book->id)
+            ->update($validatedData);
+
+        return redirect('/admin/books')->with('success', 'Post has been edited!');
     }
 
     /**
@@ -104,7 +123,7 @@ class BooksController extends Controller
     public function destroy(Book $book)
     {
 
-        Book::destroy($book->books);
-        return redirect('/admin/dashboard')->with('delete', 'post berhasil dihapus');
+        Book::destroy($book->id);
+        return redirect('/admin/books')->with('delete', 'post berhasil dihapus');
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Books;
+use App\Models\Book;
 
 class BooksController extends Controller
 {
@@ -14,7 +14,9 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+       return view('admin.dashboard.index',[
+           'books' => Book::all()
+       ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dashboard.create');
     }
 
     /**
@@ -35,7 +37,25 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'pengarang' => 'required',
+            'penerbit' => 'required',
+            'image' => 'image|file|max:1024',
+            'tahun_terbit' => 'required',
+            'isbn' => 'required',
+            'jumlah_buku' => 'required',
+            'lokasi' => 'required',
+            'tanggal_input' => 'required'
+        ]);
+
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        Book::create($validatedData);
+
+        return redirect('/admin/dashboard')->with('success', 'post berhasil dibuat');
     }
 
     /**
@@ -44,10 +64,13 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $book)
     {
-        //
+        return view('admin.dashboard', [
+            'books' => $book
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -78,8 +101,10 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Book $book)
     {
-        //
+
+        Book::destroy($book->books);
+        return redirect('/admin/dashboard')->with('delete', 'post berhasil dihapus');
     }
 }

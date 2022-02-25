@@ -55,7 +55,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="/main/mainpost">Main</a></li>
+              <li><a class="nav-link" href="/admin/dashboard">Main</a></li>
               <li><a class="nav-link" href="#">Buku terbaru</a></li>
               <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>

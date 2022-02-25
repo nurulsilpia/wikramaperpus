@@ -7,7 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminPostController;
-use App\Http\Controllers\MainPostController;
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,4 +105,4 @@ Route::resource('/admin/posts', AdminPostController::class)->middleware('admin')
 Route::get('/admin/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/admin/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
-Route::resource('/main/mainpost', MainPostController::class)->middleware('admin');
+Route::resource('/admin/dashboard', BooksController::class)->middleware('admin');

@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('pengarang')->nullable();
             $table->string('penerbit')->nullable();
             $table->char('tahun_terbit')->nullable();
-            $table->string('cover')->nullable();
+            $table->string('image')->nullable();
             $table->char('isbn', 25)->nullable();
             $table->char('jumlah_buku');
             $table->string('lokasi');

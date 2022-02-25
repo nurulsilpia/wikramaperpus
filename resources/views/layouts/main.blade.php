@@ -36,7 +36,7 @@
       <div class="main-content">
         @yield('content')
       </div>
-      <footer class="main-footer">
+      <footer class="footer main-footer">
       <div class="row gy-4 gx-5 mt-3">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="h4 text-white">Mitra Kami  </h5><br>

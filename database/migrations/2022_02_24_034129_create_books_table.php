@@ -15,6 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+
             $table->string('judul');
             $table->string('pengarang')->nullable();
             $table->string('penerbit')->nullable();

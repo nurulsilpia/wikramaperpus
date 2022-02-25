@@ -2,9 +2,8 @@
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
       <div class="media">
-       <img class=" ml-3 mr-0 mt-3" src="../../assets/img/logo.png" alt="logo" width="30">
         <div class="media-body">
-           <h6 class="mt-4 mr-2">Perpustakaan Wikrama</h6>
+           <h6 class="mt-4 mr-2 text-dark">Perpustakaan Wikrama</h6>
         </div>
        </div>
       </div>
@@ -16,7 +15,7 @@
           <ul class="dropdown-menu">
           <li><a class="nav-link" href="/">Main</a></li>
             <li><a class="nav-link" href="/buku-terbaru">Buku Terbaru</a></li>
-            <li><a class="nav-link" href="/buku-terlaris">Buku Terlaris</a></li>
+            <li><a class="nav-link" href="/buku-terlaris">Buku peminat terbanyak</a></li>
           </ul>
         </li>
 
@@ -56,10 +55,11 @@
         @can('admin')
           <li class="menu-header">Administator</li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Data Buku</span></a>
+            <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="#">Ebook</a></li>
-              <li><a class="nav-link" href="#">Buku Fisik</a></li>
+              <li><a class="nav-link" href="#">Main</a></li>
+              <li><a class="nav-link" href="#">Buku terbaru</a></li>
+              <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

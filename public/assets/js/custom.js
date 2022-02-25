@@ -38,3 +38,13 @@ function startTime() {
     }
     return i;
 }
+
+// Data AOS
+AOS.init({
+    delay:500
+  });
+
+// Data Table
+$(document).ready(function() {
+    $('#tableAll').DataTable();
+} );

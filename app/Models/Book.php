@@ -12,7 +12,7 @@ class Book extends Model
 
     protected $guarded = ['id'];
 
-    public function categoryBook()
+    public function category()
     {
         return $this->belongsTo(CategoryBook::class);
         // 1 buku punya 1 category. model Book sdh berelasi dg model CategoryBook

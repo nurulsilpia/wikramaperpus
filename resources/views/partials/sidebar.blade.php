@@ -2,7 +2,6 @@
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
       <div class="media">
-       <img class=" ml-3 mr-0 mt-3" src="assets/img/logo.png" alt="logo" width="30">
         <div class="media-body">
            <h6 class="mt-4 mr-2 text-dark">Perpustakaan Wikrama</h6>
         </div>

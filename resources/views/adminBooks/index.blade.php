@@ -39,7 +39,7 @@
             @foreach( $books as $book)
             <tr>
                 <td> {{ $loop->iteration }} </td>
-                <td> {{ $book->category->name }}</td> 
+                <td> {{ $book->category->name }}</td>
                 <td> {{ $book->judul }}</td>
                 <td> {{ $book->pengarang }}</td>
                 <td> {{ $book->penerbit }}</td>

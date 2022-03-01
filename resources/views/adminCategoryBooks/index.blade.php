@@ -20,7 +20,12 @@
     @endif
 
     <div class="table-responsive col-lg-5">
-      <a href="/admin/category-books/create" class="btn btn-primary mb-3">Create new Category</a>
+      {{-- <a href="/admin/category-books/create" class="btn btn-primary mb-3">Create new Category</a> --}}
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
+        Create new Category
+      </button>
+
         <table class="table table-striped table-sm" id="tableAll">
           <thead>
             <tr>
@@ -49,4 +54,33 @@
     </div>
   </div>
 </section>
+
+<!-- Modal Create-->
+<div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create New Category</h5>
+      </div>
+      <div class="modal-body">
+        <form action="/admin/category-books" method="POST">
+          @csrf
+          <div class="">
+            <label for="name" class="form-label">Nama Kategori</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('name') }}">
+            @error('name')
+              <div class="invalid-feedback">
+                {{ $message }}
+               </div>
+            @enderror
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Create Category</button>
+          <button type="button" class="btn btn-secondary text-dark mx-3" data-bs-dismiss="modal">Close</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection

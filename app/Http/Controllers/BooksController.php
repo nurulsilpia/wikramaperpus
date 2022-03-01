@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\CategoryBook;
+use Illuminate\Support\Facades\Storage;
 
 class BooksController extends Controller
 {
@@ -26,7 +28,9 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('adminBooks.create');
+        return view('adminBooks.create', [
+            'categories' => CategoryBook::all()
+        ]);
     }
 
     /**
@@ -38,6 +42,7 @@ class BooksController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'category_id' => 'required',
             'judul' => 'required|max:255',
             'pengarang' => 'required',
             'penerbit' => 'required',
@@ -67,9 +72,9 @@ class BooksController extends Controller
      */
     public function show(Book $book)
     {
-        // return view('admin.dashboard', [
-        //     'books' => $book
-        // ]);
+        return view('adminBooks.show', [
+            'book' => $book
+        ]);
     }
 
 
@@ -82,7 +87,8 @@ class BooksController extends Controller
     public function edit(Book $book)
     {
         return view('adminBooks.edit', [
-            'book' => $book
+            'book' => $book,
+            'categories' => CategoryBook::all()
         ]);
     }
 
@@ -96,6 +102,7 @@ class BooksController extends Controller
     public function update(Request $request, Book $book)
     {
         $rules = [
+            'category_id' => 'required',
             'judul' => 'required|max:255',
             'pengarang' => 'required',
             'penerbit' => 'required',
@@ -108,6 +115,13 @@ class BooksController extends Controller
         ];
 
         $validatedData = $request->validate($rules);
+
+        if($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
         
         Book::where('id', $book->id)
             ->update($validatedData);
@@ -123,6 +137,9 @@ class BooksController extends Controller
      */
     public function destroy(Book $book)
     {
+        if ($book->image) {
+            Storage::delete($book->image);
+        }
 
         Book::destroy($book->id);
         return redirect('/admin/books')->with('delete', 'post berhasil dihapus');

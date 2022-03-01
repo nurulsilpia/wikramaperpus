@@ -17,4 +17,9 @@ class Book extends Model
         return $this->belongsTo(CategoryBook::class);
         // 1 buku punya 1 category. model Book sdh berelasi dg model CategoryBook
     }
+
+    public function getRouteKeyName()
+    {
+        return 'judul';
+    }
 }

@@ -10,6 +10,18 @@
     <form action="/admin/books" method="POST" class="mb-5 col-lg-10" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" name="category_id" aria-label="Default select example">
+                        @foreach ($categories as $category)
+                            @if (old('category_id') == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                            @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="judul" class="form-label">Title</label>
                     <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" required autofocus value="{{ old('judul') }}">
                     @error('judul')
@@ -96,9 +108,9 @@
                     </div>
                 </div><br>
                 <button type="submit" class="btn btn-primary">Create Post</button>
-            </form>
+    </form>
             
-        </div>
+  </div>
 </section>
 
 <script>

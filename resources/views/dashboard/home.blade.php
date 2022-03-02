@@ -1,18 +1,14 @@
 @extends('layouts.main')
 @section('content')
- <div class="">
     <section class="section d-flex">
         <div class="section-header">
-           <img src="assets/img/main.png" class="image" width="700px" height="350px" alt="thumbnail">
-        </div>
-        <div class="section-body">
+           <img src="/img/banner.png" class="image" width="700px" height="350px" alt="thumbnail">
         </div>
     </section>
-    </div>
 
     <h5 class="text-dark">Buku Terbaru</h5><br>
     <section class="section d-flex">
-        <div class="section-header">
+        <div class="section-header d-flex">
                <div class="card " style="width: 14rem;">
                  <img src="assets/img/cover.jpg" class="card-img-top"  alt="...">
                     <div class="card-body">
@@ -48,7 +44,7 @@
 
     <h5 class="text-dark">Buku Peminat Terbanyak</h5><br>
     <section class="section d-flex">
-        <div class="section-header">
+        <div class="section-header d-flex">
                <div class="card " style="width: 14rem;">
                  <img src="assets/img/cover.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -86,7 +82,7 @@
     
 </div>
 
-</div>
+
 
 
     

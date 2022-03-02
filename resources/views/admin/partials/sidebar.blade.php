@@ -9,49 +9,6 @@
       </div>
 
     <ul class="sidebar-menu">
-        <li class="menu-header">Main</li>
-        <li class="nav-item dropdown">
-          <a href="/" class="nav-link has-dropdown"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a>
-          <ul class="dropdown-menu">
-          <li><a class="nav-link" href="/">Main</a></li>
-            <li><a class="nav-link" href="/buku-terbaru">Buku Terbaru</a></li>
-            <li><a class="nav-link" href="/buku-terlaris">Buku peminat terbanyak</a></li>
-          </ul>
-        </li>
-
-        <li class="menu-header">Content</li>
-        <li class="nav-item dropdown">
-          <a href="/ebook" class="nav-link has-dropdown" data-toggle="dropdown"><i class="bi bi-book-half"></i></i> <span>Ebook</span></a>
-          <ul class="dropdown-menu">
-            <li><a class="nav-link" href="/ebook">Buku Novel</a></li>
-            <li><a class="nav-link" href="/ebook">Buku Biografi</a></li>
-            <li><a class="nav-link" href="/ebook">Buku Pembelajaran</a></li>
-            <li><a class="nav-link" href="/ebook">Buku Fiksi</a></li>
-            <li><a class="nav-link" href="/ebook">Kamus</a></li>
-            <li><a class="nav-link" href="/ebook">Ensiklopedi</a></li>
-          </ul>
-        </li>
-        <li class="menu-header">News</li>
-        <li class="nav-item dropdown">
-          <a href="/profile-perpust" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="/posts" class="nav-link {{ Request::is('/posts') ? 'active' : '' }}"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="/galery" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
-        </li>
-
-        @if (auth()->user())
-          <li class="menu-header">Member</li>
-          <li class="nav-item dropdown">
-            <a href="/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="/library" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
-          </li>
-        @endif
-        
         @can('admin')
           <li class="menu-header">Administator</li>
           <li class="nav-item dropdown">

@@ -38,15 +38,15 @@
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
       
-      @include('partials.navbar')
-      @include('partials.sidebar')
+      @include('admin.partials.navbar')
+      @include('admin.partials.sidebar')
 
       <!-- Main Content -->
       <div class="main-content">
         @yield('content')
       </div>
 
-      <footer class="main-footer">
+      <footer class="main-footer bg-dark">
             <div class="row gy-4 gx-5">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="h4 text-white">Mitra Kami  </h5><br>

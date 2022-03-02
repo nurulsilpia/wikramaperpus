@@ -6,11 +6,11 @@
 
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-                <li class="nav__item"><a href="/" class="nav__link active">Home</a></li>
-                <li class="nav__item"><a href="/ebook" class="nav__link">Ebook</a></li>
-                <li class="nav__item"><a href="/profile-perpust" class="nav__link">Profile</a></li>
-                <li class="nav__item"><a href="/posts" class="nav__link">Article</a></li>
-                <li class="nav__item"><a href="/galery" class="nav__link">Galery</a></li>
+                <li class="nav__item"><a href="/" class="nav__link {{ Request::is('/') ? 'active' : '' }}">Home</a></li>
+                <li class="nav__item"><a href="/ebook" class="nav__link {{ Request::is('ebook*') ? 'active' : '' }}">Ebook</a></li>
+                <li class="nav__item"><a href="/profile-perpust" class="nav__link {{ Request::is('profile*') ? 'active' : '' }}">Profile</a></li>
+                <li class="nav__item"><a href="/posts" class="nav__link {{ Request::is('posts*') ? 'active' : '' }}">Article</a></li>
+                <li class="nav__item"><a href="/galery" class="nav__link {{ Request::is('galery*') ? 'active' : '' }}">Galery</a></li>
 
                 @if (auth()->user())
                     <li class="nav__item"><a href="#" class="nav__link">Sirkulasi</a></li>

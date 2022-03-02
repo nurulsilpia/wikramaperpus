@@ -1,13 +1,13 @@
 @extends('layouts.main')
 @section('content')
 <section class="section">
-    <div class="section-header d-block">
+    <div class="section-header d-block" style="font-size: 1rem;">
         <div class="mb-4 text-center">
             <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
         </div>
-
-        <img src="assets/img/profile.png" class="img-fluid rounded d-block px-5" height="500px" alt="desain web">
-        
+        <center>
+            <img src="assets/img/profile.png" class="img-fluid rounded d-block px-5" height="500px" alt="desain web">
+        </center>
         <div class="px-5 mt-5">
             <h4 class=" text-primary">Identitas Perpustakaan</h4>
             <table class="mb-5">
@@ -88,7 +88,7 @@
                     <td>96 m<sup>2</sup></td>
                 </tr>
                 <tr>
-                    <th>Status Kepemilkan Gedung Perpustakaan</th>
+                    <th>Status Kepemilikan Gedung Perpustakaan</th>
                     <td class="px-3">:</td>
                     <td>Milik Yayasan Prawitama</td>
                 </tr>
@@ -139,7 +139,7 @@
         <hr><br>
         <div class="mb-5 px-5">
             <h4 class="text-primary">Struktur Organisasi</h4>
-            <img class="" src="assets/img/org.png"  height="400px" alt="desain web">
+            <img class="rounded mx-auto d-block" src="assets/img/org.png"  height="400px" alt="desain web">
         </div>     
 
     </div>

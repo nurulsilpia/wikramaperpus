@@ -3,7 +3,7 @@
 <section class="section">
     <div class="section-header d-block">
         <div class="mb-4 text-center">
-            <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
+            <h1><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h1>
         </div>
 
         <img src="assets/img/profile.png" class="img-fluid rounded d-block px-5" height="500px" alt="desain web">

@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\CategoryBookController;
+use App\Http\Controllers\SirkulasiController;
 
 
 /*
@@ -110,6 +111,8 @@ Route::prefix('admin')->group(function () {
     
     Route::resource('/books', BooksController::class)->middleware('admin');
     Route::resource('/category-books', CategoryBookController::class)->middleware('admin');
+
+    Route::resource('/sirkulasis', SirkulasiController::class)->middleware('admin');
 });
 
 

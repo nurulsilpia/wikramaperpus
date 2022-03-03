@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- Data Table -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   {{-- Bootstrap Icon --}}
@@ -38,15 +38,15 @@
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
       
-      @include('partials.navbar')
-      @include('partials.sidebar')
+      @include('admin.partials.navbar')
+      @include('admin.partials.sidebar')
 
       <!-- Main Content -->
       <div class="main-content">
         @yield('content')
       </div>
 
-      <footer class="main-footer">
+      <footer class="main-footer bg-dark">
             <div class="row gy-4 gx-5">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="h4 text-white">Mitra Kami  </h5><br>
@@ -92,7 +92,7 @@
   <script src="../../assets/js/stisla.js"></script>
 
   {{-- data table --}}
-  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Template JS File -->
@@ -106,6 +106,11 @@
 
 
   <script>
+    // Data Table
+    $(document).ready(function() {
+      $('#tableAll').DataTable();
+    } );
+    
     function startTime() {
       var today = new Date();
       var hr = today.getHours();
@@ -142,11 +147,6 @@
     AOS.init({
       delay:500
     });
-
-    // Data Table
-    $(document).ready(function() {
-      $('#tableAll').DataTable();
-    } );
   </script>
 
 </body>

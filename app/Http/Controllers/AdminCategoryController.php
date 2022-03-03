@@ -47,7 +47,7 @@ class AdminCategoryController extends Controller
 
         Category::create($validatedData);
 
-        return redirect('/admin/categories')->with('success', 'New post has been added!');
+        return redirect('/admin/categories')->with('success', 'New category has been added!');
     }
 
     /**
@@ -96,7 +96,7 @@ class AdminCategoryController extends Controller
 
         Category::where('id', $category->id)->update($validatedData);
 
-        return redirect('/admin/categories')->with('success', 'Post has been updated!');
+        return redirect('/admin/categories')->with('success', 'Category has been updated!');
     }
 
     /**
@@ -109,7 +109,7 @@ class AdminCategoryController extends Controller
     {
         Category::destroy($category->id);
 
-        return redirect('/admin/categories')->with('danger', 'Post has been deleted!');
+        return redirect('/admin/categories')->with('danger', 'Category has been deleted!');
     }
 
     public function checkSlug(Request $request){

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 @section('content')
 
 <section class="section">
@@ -8,20 +8,18 @@
     </div>
 
     @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success col-lg-5" role="alert">
         {{ session('success')}}
     </div>
     @endif
 
     @if(session()->has('delete'))
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger col-lg-5" role="alert">
         {{ session('delete')}}
     </div>
     @endif
 
     <div class="table-responsive col-lg-5">
-      {{-- <a href="/admin/category-books/create" class="btn btn-primary mb-3">Create new Category</a> --}}
-
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
         Create new Category
       </button>

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 @section('content')
 
 <section class="section">
@@ -21,7 +21,7 @@
 
     <div class="table-responsive">
       <a href="/admin/books/create" class="btn btn-primary mb-3">Add New Book</a>
-        <table class="table table-striped table-sm" id="tableAll">
+      <table class="table table-striped table-sm" id="tableAll">
           <thead>
             <tr>
               <th scope="col">No</th>
@@ -62,6 +62,4 @@
     </div>
   </div>
 </section>
-
-
 @endsection

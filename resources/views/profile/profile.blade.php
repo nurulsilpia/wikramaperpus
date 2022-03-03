@@ -6,7 +6,7 @@
             <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
         </div>
         <center>
-            <img src="assets/img/profile.png" class="img-fluid rounded d-block px-5" height="500px" alt="desain web">
+            <img src="/img/banner.png" class="img-fluid rounded d-block shadow-sm" height="500">
         </center>
         <div class="px-5 mt-5">
             <h4 class=" text-primary">Identitas Perpustakaan</h4>

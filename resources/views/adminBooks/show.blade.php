@@ -13,7 +13,7 @@
                 
                 <a href="/admin/books" class="btn btn-success"><span data-feather="arrow-left"></span> Back to all my books</a>
                 <a href="/admin/books/{{ $book->judul }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-                <form action="/dashboard/books/{{ $book->judul }}" method="book" class="d-inline">
+                <form action="/admin/books/{{ $book->judul }}" method="book" class="d-inline">
                     @method('delete')
                     @csrf
                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><span data-feather="trash-2"></span> Delete</button>

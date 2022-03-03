@@ -58,7 +58,7 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Name" name="name" id="name" class="@error('name') is-invalid @enderror" autofocus required value="{{ old('name') }}"/>
+                <input type="text" placeholder="Name" name="name" id="name" class="@error('name') is-invalid @enderror" autofocus required value="{{ old('name') }}" autofocus/>
                 @error('name')    
                   <div class="invalid-feedback">
                       {{ $message }}
@@ -67,7 +67,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" name="username" id="username" class="@error('username') is-invalid @enderror" autofocus required value="{{ old('username') }}"/>
+              <input type="text" placeholder="Username" name="username" id="username" class="@error('username') is-invalid @enderror" required value="{{ old('username') }}"/>
               @error('username')    
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -76,7 +76,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="email" id="email" class="@error('email') is-invalid @enderror" autofocus required value="{{ old('email') }}"/>
+              <input type="email" placeholder="Email" name="email" id="email" class="@error('email') is-invalid @enderror" required value="{{ old('email') }}"/>
               @error('email')    
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -103,7 +103,7 @@
             <h3>Perpustakaan SMK Wikrama</h3>
             <p class="text-capitalize fst-italic">
               "melayani dengan hati dan teknologi" <br>
-              <small class="d-block text-center mt-3">Not Registered? Register Now!</small>
+              <small class="d-block text-center fw-bolder mt-3">Not Registered? Register Now!</small>
             </p>
             <button class="btn transparent" id="sign-up-btn">
               Sign up
@@ -116,7 +116,7 @@
             <h3>Perpustakaan SMK Wikrama</h3>
             <p class="text-capitalize fst-italic">
                 "melayani dengan hati dan teknologi" <br>
-                <small class="d-block text-center mt-3">Already have account? Sign in</small>
+                <small class="d-block text-center fw-bolder mt-3">Already have account? Sign in</small>
             </p>
             <button class="btn transparent" id="sign-in-btn">
               Sign in

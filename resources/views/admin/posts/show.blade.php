@@ -9,7 +9,7 @@
                     
                     <a href="/admin/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to all my posts</a>
                     <a href="/admin/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-                    <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                    <form action="/admin/posts/{{ $post->slug }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><span data-feather="trash-2"></span> Delete</button>

@@ -61,7 +61,7 @@ class BooksController extends Controller
 
         Book::create($validatedData);
 
-        return redirect('/admin/books')->with('success', 'post berhasil dibuat');
+        return redirect('/admin/books')->with('success', 'Book has been created');
     }
 
     /**
@@ -126,7 +126,7 @@ class BooksController extends Controller
         Book::where('id', $book->id)
             ->update($validatedData);
 
-        return redirect('/admin/books')->with('success', 'Post has been edited!');
+        return redirect('/admin/books')->with('success', 'Book has been updated!');
     }
 
     /**
@@ -142,6 +142,6 @@ class BooksController extends Controller
         }
 
         Book::destroy($book->id);
-        return redirect('/admin/books')->with('delete', 'post berhasil dihapus');
+        return redirect('/admin/books')->with('delete', 'Book has been deleted');
     }
 }

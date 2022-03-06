@@ -28,7 +28,7 @@
             <div class="card mb-3">
                 @if ($posts[0]->image)
                     <div style="max-height: 400px; overflow: hidden;" class="d-flex justify-content-center">
-                        <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
+                        <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid" style="object-fit: cover;">
                     </div>
                 @else
                     <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">

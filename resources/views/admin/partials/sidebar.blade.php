@@ -33,7 +33,7 @@
             <a href="#" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
+            <a href="/admin/galery" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="bi bi-book-half"></i></i><span>Books</span></a>

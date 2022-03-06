@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminGaleryController;
 use App\Http\Controllers\CategoryBookController;
 use App\Http\Controllers\AdminCategoryController;
 
@@ -63,12 +65,13 @@ Route::get('profile-perpust', function () {
 });
 
 //galery
-Route::get('galery', function () {
-    return view('galery/galery', [
-        "title" => "galery/galery",
-        "active" => "galery/galery"
-    ]);
-});
+// Route::get('galery', function () {
+//     return view('galery/galery', [
+//         "title" => "galery/galery",
+//         "active" => "galery/galery"
+//     ]);
+// });
+Route::get('/galery', [GaleryController::class, 'index']);
 
 //sirkulasi
 Route::get('sirkulasi', function () {
@@ -114,7 +117,6 @@ Route::prefix('admin')->group(function () {
     
     Route::resource('/books', BooksController::class)->middleware('admin');
     Route::resource('/category-books', CategoryBookController::class)->middleware('admin');
+
+    Route::resource('/galery', AdminGaleryController::class)->middleware('admin');
 });
-
-
-

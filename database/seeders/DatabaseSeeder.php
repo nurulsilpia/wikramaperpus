@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\CategoryBook;
+use App\Models\Galery;
 
 class DatabaseSeeder extends Seeder
 {
@@ -62,7 +63,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Biografi'
         ]);
         
-        Post::factory(20)->create();
+        Post::factory(10)->create();
 
+        Galery::factory(10)->create();
     }
 }

@@ -41,7 +41,7 @@
                             By. <a href="/posts?author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
                         </small>
                     </p>
-                    <p class="card-text">{{ $posts[0]->excerpt }}</p>
+                    <p class="card-text mb-3">{{ $posts[0]->excerpt }}</p>
                     <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read More</a>                
                 </div>
             </div>
@@ -66,7 +66,7 @@
                                             By. <a href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
                                         </small>
                                     </p>
-                                <p class="card-text">{{ $post->excerpt }}</p>
+                                <p class="card-text mb-3">{{ $post->excerpt }}</p>
                                 <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More</a>
                                 </div>
                             </div>

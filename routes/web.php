@@ -106,23 +106,23 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Route khusus Admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function(){
         return view('admin.index');
     });
     
-    Route::get('/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
-    Route::resource('/posts', AdminPostController::class)->middleware('admin');
+    Route::get('/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
+    Route::resource('/posts', AdminPostController::class);
     
-    Route::get('/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('admin');
-    Route::resource('/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+    Route::get('/categories/checkSlug', [AdminCategoryController::class, 'checkSlug']);
+    Route::resource('/categories', AdminCategoryController::class)->except('show');
     
-    Route::resource('/books', BooksController::class)->middleware('admin');
-    Route::resource('/category-books', CategoryBookController::class)->middleware('admin');
+    Route::resource('/books', BooksController::class);
+    Route::resource('/category-books', CategoryBookController::class);
     
-    Route::resource('/galery', AdminGaleryController::class)->middleware('admin');
-    
-    Route::resource('/sirkulasis', SirkulasiController::class)->middleware('admin');
+    Route::resource('/galery', AdminGaleryController::class);
+
+    Route::resource('/sirkulasis', SirkulasiController::class);
 });
 
 

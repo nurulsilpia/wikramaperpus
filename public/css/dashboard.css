@@ -375,3 +375,18 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
       font-family:arial,sans-serif;
       color:#fff;
   }
+
+/*===== Galery ===== */
+.photo-gallery {
+  color:#313437;
+  background-color:#fff;
+}
+
+.photo-gallery .photos {
+  padding-bottom:20px;
+}
+
+.photo-gallery .item {
+  padding-bottom:30px;
+}
+

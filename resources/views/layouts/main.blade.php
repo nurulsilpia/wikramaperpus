@@ -10,6 +10,10 @@
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+    {{-- For Galery --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <title>Perpustakaan</title>
@@ -61,6 +65,11 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     {{-- Custom JS --}}
     <script type="text/javascript" src="/js/main.js"></script>
+
+    {{-- For Galery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 
     <script>
         function startTime() {

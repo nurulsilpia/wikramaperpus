@@ -43,7 +43,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
+            <a href="/admin/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>
           </li>
         @endcan
       </ul>

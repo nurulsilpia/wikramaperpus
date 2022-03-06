@@ -2,14 +2,14 @@
 @section('content')
 <section class="section d-flex justify-content-around">
     <div class="dashboard-left">
-        <div class="banner">
+        <div class="banner bg-white p-3 rounded">
             <img src="/img/banner.png" class="img-fluid rounded" width="700px" height="350px" alt="thumbnail">
         </div>
 
         <div class="buku-terbaru my-5">
             <h3 class="text-dark fw-bolder">Buku Terbaru</h3><br>
             <div class="d-flex">
-                <div class="card " style="width: 15rem;">
+                <div class="card shadow" style="width: 15rem;">
                   <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                      <div class="card-body">
                         <h5 class="card-title">Judul</h5>
@@ -19,7 +19,7 @@
                  </div>
  
                  <div class="ml-3">
-                     <div class="card " style="width: 15rem;">
+                     <div class="card shadow" style="width: 15rem;">
                          <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                               <div class="card-body">
                                  <h5 class="card-title">Judul</h5>
@@ -30,7 +30,7 @@
                  </div>
  
                  <div class="ml-3">
-                     <div class="card " style="width: 15rem;">
+                     <div class="card shadow" style="width: 15rem;">
                          <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                               <div class="card-body">
                                  <h5 class="card-title">Judul</h5>
@@ -45,7 +45,7 @@
         <div class="peminat-terbanyak">
             <h3 class="text-dark fw-bolder">Buku Peminat Terbanyak</h3><br>
             <div class="d-flex">
-                <div class="card " style="width: 15rem;">
+                <div class="card shadow" style="width: 15rem;">
                   <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                      <div class="card-body">
                         <h5 class="card-title">Judul</h5>
@@ -55,7 +55,7 @@
                  </div>
  
                  <div class="ml-3">
-                     <div class="card " style="width: 15rem;">
+                     <div class="card shadow" style="width: 15rem;">
                          <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                               <div class="card-body">
                                  <h5 class="card-title">Judul</h5>
@@ -66,7 +66,7 @@
                  </div>
  
                  <div class="ml-3">
-                     <div class="card " style="width: 15rem;">
+                     <div class="card shadow" style="width: 15rem;">
                          <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
                               <div class="card-body">
                                  <h5 class="card-title">Judul</h5>

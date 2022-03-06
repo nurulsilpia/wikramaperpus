@@ -29,6 +29,7 @@ body {
   margin: 3rem 0 0 0;
   font-family: 'Poppins', sans-serif;
   font-size: .938rem;
+  background-color: #f4f6f9;
   color: #0D1730;
 }
 
@@ -36,11 +37,11 @@ h1, h2, p {
   margin: 0;
 }
 
-ul {
+/* ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
+} */
 
 a {
   text-decoration: none;

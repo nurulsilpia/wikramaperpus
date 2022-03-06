@@ -122,7 +122,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     
     Route::resource('/galery', AdminGaleryController::class);
 
-    Route::resource('/sirkulasis', SirkulasiController::class);
+    Route::resource('/sirkulasi', SirkulasiController::class);
 });
 
 

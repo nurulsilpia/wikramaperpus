@@ -2,13 +2,15 @@
 @section('content')
 <section class="section">
     <div class="section-header d-block" style="font-size: 1rem;">
-        <div class="mb-4 text-center">
-            <h1><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h1>
+        <div class="card rounded p-3">
+            <div class="mb-4 text-center">
+                <h1><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h1>
+            </div>
+            <center>
+                <img src="/img/banner.png" class="img-fluid rounded d-block shadow-sm" height="500">
+            </center>
         </div>
-        <center>
-            <img src="/img/banner.png" class="img-fluid rounded d-block shadow-sm" height="500">
-        </center>
-        <div class="px-5 mt-5">
+        <div class="px-5 mt-3 card py-5">
             <h4 class=" text-primary">Identitas Perpustakaan</h4>
             <table class="mb-5">
                 <tr>
@@ -101,7 +103,7 @@
         </div>
 
         <hr><br>
-        <div class="mb-5 px-5">
+        <div class="mb-3 p-5 card">
             <h4 class="text-primary">Sejarah Perpustakaan</h4>
             <p class="text-justify">
                 Perpustakaan SMK Wikrama Bogor berada di Kampus SMK Wikrama Bogor Kelurahan Sindangsari, Kecamatan Bogor Timur, Kota Bogor didirikan pada tahun 1996.  Secara fisik perpustakaan sekolah terletak di lantai 2 (dua) gedung Pajajaran yang merupakan gedung pertama yang dibangun, tepatnya berada di area bangunan seluas 96 m2. Lokasi ini berada di pusat kegiatan pembelajaran yang mudah dijangkau oleh peserta didik, pendidik dan tenaga kependidikan. Semenjak didirikan, keberadaan ruang perpustakaan SMK Wikrama Bogor memberikan manfaat bagi sivitas akademik sekolah bahkan masyarakat sekitar sekolah
@@ -109,25 +111,25 @@
         </div>
         <hr><br>
 
-        <div class="mb-5 px-5">
+        <div class="mb-3 p-5 card">
             <h4 class="text-primary">Visi,Misi Dan Motto Perpustakaan Serta Sasaran</h4><br>
             <h6 class="text-dark"> Visi : </h6>
             <ul>
                 <li>Menjadi perpustakaan sekolah teladan berbasis Teknologi Informasi dan Komunikasi</li>
             </ul>
 
-            <h6 class="text-dark"> Misi : </h6>
+            <h6 class="text-dark mt-3"> Misi : </h6>
             <ul>
                 <li> Menjadikan perpustakaan sebagai sumber informasi bagi sivitas sekolah dan masyarakat </li>
                 <li>  Menjadikan budaya membaca sebagai bagian dari budaya sekolah</li>
             </ul>
 
-            <h6 class="text-dark"> Motto : </h6>
+            <h6 class="text-dark mt-3"> Motto : </h6>
             <blockquote class="blockquote text-italic">
-                <p class="mt-2">Melayani dengan Hati dan Teknologi "</p>
+                <p class="mt-2 text-italic"><i> "Melayani dengan Hati dan Teknologi"</i></p>
             </blockquote>
 
-            <h6 class="text-dark">Sasaran : </h6>
+            <h6 class="text-dark mt-3">Sasaran : </h6>
             <ol>
                 <li>Meningkatnya budaya membaca masyarakat sekolah</li>
                 <li>Meningkatnya masyarakat pengunjung perpustakaan</li>
@@ -137,7 +139,7 @@
         </div>
         
         <hr><br>
-        <div class="mb-5 px-5">
+        <div class="mb-3 p-5 card">
             <h4 class="text-primary">Struktur Organisasi</h4>
             <img class="rounded mx-auto d-block" src="assets/img/org.png"  height="400px" alt="desain web">
         </div>     

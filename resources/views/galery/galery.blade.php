@@ -5,7 +5,7 @@
         <h1 class="mb-3">Galery</h1>
     </div>
     <div class="section-body">
-      <div class="photo-gallery">
+      <div class="photo-gallery pt-3 rounded">
         <div class="container">
           <div class="row photos">
             @foreach ($galeries as $galery)

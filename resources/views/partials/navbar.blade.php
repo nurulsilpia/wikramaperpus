@@ -5,7 +5,7 @@
         </div>
 
         <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
+            <ul class="nav__list list-unstyled m-0">
                 <li class="nav__item"><a href="/" class="nav__link {{ Request::is('/') ? 'active' : '' }}">Home</a></li>
                 <li class="nav__item"><a href="/ebook" class="nav__link {{ Request::is('ebook*') ? 'active' : '' }}">Ebook</a></li>
                 <li class="nav__item"><a href="/profile-perpust" class="nav__link {{ Request::is('profile*') ? 'active' : '' }}">Profile</a></li>

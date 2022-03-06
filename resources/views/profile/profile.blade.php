@@ -3,7 +3,7 @@
 <section class="section">
     <div class="section-header d-block" style="font-size: 1rem;">
         <div class="mb-4 text-center">
-            <h1>Tentang Kami, Perpustakaan SMK Wikrama</h1>
+            <h1><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h1>
         </div>
         <center>
             <img src="/img/banner.png" class="img-fluid rounded d-block shadow-sm" height="500">

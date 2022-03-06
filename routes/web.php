@@ -10,7 +10,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\AdminGaleryController;
 use App\Http\Controllers\CategoryBookController;
+use App\Http\Controllers\SirkulasiController;
 use App\Http\Controllers\AdminCategoryController;
+
 
 
 /*
@@ -117,6 +119,11 @@ Route::prefix('admin')->group(function () {
     
     Route::resource('/books', BooksController::class)->middleware('admin');
     Route::resource('/category-books', CategoryBookController::class)->middleware('admin');
-
+    
     Route::resource('/galery', AdminGaleryController::class)->middleware('admin');
+    
+    Route::resource('/sirkulasis', SirkulasiController::class)->middleware('admin');
 });
+
+
+

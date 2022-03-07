@@ -12,8 +12,7 @@ use App\Http\Controllers\AdminGaleryController;
 use App\Http\Controllers\CategoryBookController;
 use App\Http\Controllers\SirkulasiController;
 use App\Http\Controllers\AdminCategoryController;
-
-
+use App\Http\Controllers\DataSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +120,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('/category-books', CategoryBookController::class);
     
     Route::resource('/galery', AdminGaleryController::class);
+
+    Route::resource('/siswa', DataSiswaController::class);
 
     Route::resource('/sirkulasi', SirkulasiController::class);
 });

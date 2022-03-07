@@ -20,7 +20,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a href="/profile" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+            <a href="#" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
           </li>
           <li class="nav-item dropdown">
             <a href="/admin/posts" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
@@ -41,6 +41,9 @@
               <li><a class="nav-link" href="/admin/books">Data Buku</a></li>
               <li><a class="nav-link" href="/admin/category-books">Kategori Buku</a></li>
             </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="/admin/siswa" class="nav-link"><i class="bi bi-person-circle"></i><span>Data Siswa</span></a>
           </li>
           <li class="nav-item dropdown">
             <a href="/admin/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>

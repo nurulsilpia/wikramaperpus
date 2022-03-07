@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\DataSiswa;
 use Illuminate\Http\Request;
 use App\Models\Sirkulasi;
+use phpDocumentor\Reflection\DocBlock\Tags\Since;
 
 class SirkulasiController extends Controller
 {
@@ -27,7 +30,9 @@ class SirkulasiController extends Controller
     public function create()
     {
         return view('admin.sirkulasi.create', [
-            'sirkulasis' => Sirkulasi::all()
+            'sirkulasis' => Sirkulasi::all(),
+            'siswas' => DataSiswa::all(),
+            'books' => Book::all()
         ]);
     }
 
@@ -40,8 +45,9 @@ class SirkulasiController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'siswa_id' => 'required',
             'kode_item' => 'required',
-            'judul' => 'required|max:255',
+            'book_id' => 'required',
             'keterangan' => 'required',
             'kode_pinjam' => 'required',
             'tanggal_pinjam' => 'required',
@@ -51,7 +57,7 @@ class SirkulasiController extends Controller
 
         Sirkulasi::create($validatedData);
 
-        return redirect('/admin/sirkulasis')->with('success', 'data berhasil dibuat');
+        return redirect('/admin/sirkulasi')->with('success', 'Data berhasil dibuat');
     }
 
     /**
@@ -71,9 +77,13 @@ class SirkulasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sirkulasi $sirkulasi)
     {
-        //
+        return view('admin.sirkulasi.edit', [
+            'sirkulasi' => $sirkulasi,
+            'siswas' => DataSiswa::all(),
+            'books' => Book::all()
+        ]);
     }
 
     /**
@@ -83,9 +93,22 @@ class SirkulasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Sirkulasi $sirkulasi)
     {
-        //
+        $validatedData = $request->validate([
+            'siswa_id' => 'required',
+            'kode_item' => 'required',
+            'book_id' => 'required',
+            'keterangan' => 'required',
+            'kode_pinjam' => 'required',
+            'tanggal_pinjam' => 'required',
+            'tanggal_kembali' => 'required'
+        
+        ]);
+
+        Sirkulasi::where('id', $sirkulasi->id)->update($validatedData);
+
+        return redirect('/admin/sirkulasi')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -94,8 +117,10 @@ class SirkulasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Sirkulasi $sirkulasi)
     {
-        //
+        Sirkulasi::destroy($sirkulasi->id);
+
+        return redirect('/admin/sirkulasi')->with('danger', 'Data berhasil dihapus!');
     }
 }

@@ -26,16 +26,16 @@
     </div>
 
     <footer class="footer main-footer">
-        <div class="row gy-4 gx-5 mt-3">
-                  <div class="col-lg-4 col-md-6">
+        <div class="row gy-4 gx-5 mt-2 ml-5">
+                  <div class="col-lg-3 col-md-6">
                       <h5 class="h4 text-white">Mitra Kami  </h5><br>
                       <ul class="list-unstyled text-muted">
                           <li><a href="">SMK Wikrama Bogor</a></li>
-                          <li><a href="">SMK Wikrama 1 Garut</a></li>
+                          <li><a href="">SMK Wikrama 1 Garut</a></li><br>
                           <li><a href="#">CV IDS Rumah Pendidikan</a></li>
                           <li><a href="#"></a></li>
                       </ul>
-                      <p class="small text-primary mb-0">&copy; Copyrights. 2018 Perpustakaan SMK Wikrama </p>
+                    
                   </div>
                   <div class="col-lg-3 col-md-6">
                       <h5 class="text-white mb-3">Contact Us </h5><br>
@@ -46,7 +46,6 @@
                       </ul>
                   </div>
                   <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white">Clock </h5><br>
                     <body onload="startTime()">
                         <div id="clockdate">
                             <div class="clockdate-wrapper">
@@ -58,6 +57,10 @@
                   </div>
         </div>
     </footer>
+
+    <div class="banner bg-white  "><br>
+    <p class="small text-primary mb-0 text-center">&copy; Copyrights. 2022 Perpustakaan SMK Wikrama Indonesia</p><br>
+        </div>
 
     {{-- JS Boostrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

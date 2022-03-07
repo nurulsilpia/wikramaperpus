@@ -1,7 +1,7 @@
 <header class="l-header">
     <nav class="nav bd-grid">
         <div>
-            <a href="#" class="nav__logo">Perpustakaan Wikrama</a>
+            <p class="nav__logo">Perpustakaan Wikrama</p>
         </div>
 
         <div class="nav__menu" id="nav-menu">
@@ -19,7 +19,7 @@
                 @auth
                     <li class="nav__item">
                         <div class="dropdown">
-                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person-circle"></i> Hi, {{ auth()->user()->name }}
                             </a>
                         
@@ -39,7 +39,7 @@
                         </div>
                     </li>
                 @else
-                    <li class="nav__item"><a href="/login" class="btn btn-primary"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav__item"><a href="/login" class="btn btn-primary ml-5"><i class="bi bi-box-arrow-right"></i> Login</a></li>
                 @endauth
             </ul>
                 

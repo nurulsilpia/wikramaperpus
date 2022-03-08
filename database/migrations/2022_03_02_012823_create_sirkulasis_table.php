@@ -15,12 +15,13 @@ class CreateSirkulasisTable extends Migration
     {
         Schema::create('sirkulasis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('siswa_id');
+            $table->foreignId('book_id');
             $table->char('kode_item');
-            $table->string('judul');
-            $table->string('keterangan');
             $table->char('kode_pinjam');
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

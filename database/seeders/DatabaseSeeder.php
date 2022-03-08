@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Book;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\CategoryBook;
+use App\Models\DataSiswa;
 use App\Models\Galery;
 
 class DatabaseSeeder extends Seeder
@@ -63,8 +65,45 @@ class DatabaseSeeder extends Seeder
             'name' => 'Biografi'
         ]);
         
+        Book::create([
+            'category_id' => 1,
+            'judul' => 'Bibi Gill',
+            'pengarang' => 'Tere Liye',
+            'penerbit' => 'Gramedia Pustaka',
+            'tahun_terbit' => '2022',
+            'isbn' => '12345678',
+            'jumlah_buku' => 3,
+            'lokasi' => 'Rak Novel',
+            'tanggal_input' => '2022-3-10'
+        ]);
+
+        Book::create([
+            'category_id' => 1,
+            'judul' => 'SagaraS',
+            'pengarang' => 'Tere Liye',
+            'penerbit' => 'Gramedia Pustaka',
+            'tahun_terbit' => '2022',
+            'isbn' => '12345678',
+            'jumlah_buku' => 2,
+            'lokasi' => 'Rak Novel',
+            'tanggal_input' => '2022-3-09'
+        ]);
+
+        Book::create([
+            'category_id' => 2,
+            'judul' => 'Dasar Laravel',
+            'pengarang' => 'WPU Unpas',
+            'penerbit' => 'GM Media',
+            'tahun_terbit' => '2030',
+            'isbn' => '12345678',
+            'jumlah_buku' => 1,
+            'lokasi' => 'Rak Buku',
+            'tanggal_input' => '1999-06-09'
+        ]);
+
         Post::factory(10)->create();
 
         Galery::factory(10)->create();
+
     }
 }

@@ -1,28 +1,30 @@
 @extends('layouts.main')
 @section('content')
-
-    <section class="section  ">
-        <div class="section-header ">
-         <h4 class="text-dark"><marquee>Selamat datang di E-book, Selamat membaca....</marquee></h4>
-        </div>
-        <h5>Buku Novel</h5>
-        <div class="section-header">
-               <div class="card " style="width: 15rem;">
-                 <img src="https://source.unsplash.com/1200x400?" class="card-img-top" alt="...">
-                    <div class="card-body">
-                       <h5 class="card-title text-dark">Judul</h5>
-                       <p class="card-text">Some quick example text to build on the card </p>
-                       <a href="#" class="btn btn-primary">Preview</a>
+<section class="section">
+    <div class="section-header">
+        <h1 class="mb-3">Galery</h1>
+    </div>
+    <div class="section-body">
+      <div class="photo-gallery pt-3 rounded">
+        <div class="container">
+          <div class="row photos">
+       
+                <div class="col-lg-4 mb-4 item">
+                    <div class="card h-100 shadow">
+            
+                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
+                   
+                        <div class="card-body">
+                          <h5 class="card-title fw-bolder"></h5>
+                          <p class="card-text"></p>
+                        </div>
                     </div>
                 </div>
-
-
-            </div>
-
+        
+          </div>
         </div>
-    </section>
-
-    
-
-    
+      </div>
+    </div>
+</section>
+ 
 @endsection

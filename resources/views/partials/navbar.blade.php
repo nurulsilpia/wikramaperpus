@@ -39,7 +39,7 @@
                         </div>
                     </li>
                 @else
-                    <li class="nav__item"><a href="/login" class="btn btn-primary ml-5"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav__item"><a href="/login" class="btn btn-primary btn-sm ml-5"><i class="bi bi-box-arrow-right"></i> Login</a></li>
                 @endauth
             </ul>
                 

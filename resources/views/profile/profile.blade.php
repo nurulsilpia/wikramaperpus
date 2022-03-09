@@ -2,15 +2,15 @@
 @section('content')
 <section class="section">
     <div class="section-header card d-block px-5">
-        <div class="rounded p-3">
+        <div class="rounded p-2">
             <div class="mb-4 text-center">
                 <h4><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h4>
             </div>
             
-             <img class="px-4" src="/assets/img/wk.png" class="img-fluid rounded d-block shadow-sm" height="500">
-            
+             <img class="mr-2" src="/assets/img/baner.png" class="rounded d-block shadow-sm" height="600">
+            <br>
         </div>
-        <div class="px-5 mt-3">
+        <div class="px-2 mt-3">
             <h4 class=" text-primary">Identitas Perpustakaan</h4>
             <table class="mb-5">
                 <tr>

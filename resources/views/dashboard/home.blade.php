@@ -108,7 +108,7 @@
             <div id="chart" class="rounded "></div>
             </div>
             <div class="col-6 sm-6 ml-3">  
-        <video class="mb-1 mt-3 pl-3" width="500" height="350" autoplay>
+        <video class="mb-1 mt-3 pl-3" width="600" height="350" autoplay loop>
             <source src="/assets/video/wk.mp4" type="video/mp4" width="700" height="350">
         </video>
         </div>

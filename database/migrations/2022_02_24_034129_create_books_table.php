@@ -15,6 +15,7 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('jenis_id');
             $table->foreignId('category_id');
             $table->string('judul');
             $table->string('pengarang')->nullable();

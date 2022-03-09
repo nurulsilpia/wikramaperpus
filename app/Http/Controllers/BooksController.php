@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\CategoryBook;
+use App\Models\JenisBook;
 use Illuminate\Support\Facades\Storage;
 
 class BooksController extends Controller
@@ -29,7 +30,8 @@ class BooksController extends Controller
     public function create()
     {
         return view('adminBooks.create', [
-            'categories' => CategoryBook::all()
+            'categories' => CategoryBook::all(),
+            'jenises' => JenisBook::all()
         ]);
     }
 

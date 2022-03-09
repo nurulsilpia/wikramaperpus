@@ -25,6 +25,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
+              <th scope="col">Jenis</th>
               <th scope="col">Kategori</th>
               <th scope="col">Judul</th>
               <th scope="col">Pengarang</th>
@@ -39,6 +40,7 @@
             @foreach( $books as $book)
             <tr>
                 <td> {{ $loop->iteration }} </td>
+                <td> {{ $book->jenis->jenis }}</td>
                 <td> {{ $book->category->name }}</td>
                 <td> {{ $book->judul }}</td>
                 <td> {{ $book->pengarang }}</td>

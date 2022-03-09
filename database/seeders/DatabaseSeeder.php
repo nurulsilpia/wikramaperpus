@@ -3,13 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\Book;
-use Illuminate\Database\Seeder;
-use App\Models\User;
-use App\Models\Category;
 use App\Models\Post;
-use App\Models\CategoryBook;
-use App\Models\DataSiswa;
+use App\Models\User;
 use App\Models\Galery;
+use App\Models\Category;
+use App\Models\DataSiswa;
+use App\Models\JenisBook;
+use App\Models\CategoryBook;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345678')
         ]);
 
-        User::factory(3)->create();
+        // User::factory(3)->create();
 
         Category::create([
             'name' => 'Web Programming',
@@ -64,8 +65,17 @@ class DatabaseSeeder extends Seeder
         CategoryBook::create([
             'name' => 'Biografi'
         ]);
+
+        JenisBook::create([
+            'jenis' => 'Ebook'
+        ]);
+
+        JenisBook::create([
+            'jenis' => 'Buku Fisik'
+        ]);
         
         Book::create([
+            'jenis_id' => 1,
             'category_id' => 1,
             'judul' => 'Bibi Gill',
             'pengarang' => 'Tere Liye',
@@ -78,6 +88,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Book::create([
+            'jenis_id' => 2,
             'category_id' => 1,
             'judul' => 'SagaraS',
             'pengarang' => 'Tere Liye',
@@ -90,6 +101,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Book::create([
+            'jenis_id' => 1,
             'category_id' => 2,
             'judul' => 'Dasar Laravel',
             'pengarang' => 'WPU Unpas',

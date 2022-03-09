@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoryBookController;
 use App\Http\Controllers\SirkulasiController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DataSiswaController;
+use App\Http\Controllers\JenisBookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,7 +124,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     
     Route::resource('/books', BooksController::class);
     Route::resource('/category-books', CategoryBookController::class);
-    
+    Route::resource('/jenis-books', JenisBookController::class);
+
     Route::resource('/galery', AdminGaleryController::class);
 
     Route::resource('/siswa', DataSiswaController::class);

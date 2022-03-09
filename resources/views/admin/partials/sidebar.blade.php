@@ -36,6 +36,7 @@
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="/admin/books">Data Buku</a></li>
               <li><a class="nav-link" href="/admin/category-books">Kategori Buku</a></li>
+              <li><a class="nav-link" href="/admin/jenis-books">Jenis Buku</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

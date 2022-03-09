@@ -67,7 +67,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Clock </h5><br>
+                    <br>
                     <body onload="startTime()">
                         <div id="clockdate">
                             <div class="clockdate-wrapper">

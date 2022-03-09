@@ -82,7 +82,12 @@ Route::get('sirkulasi', function () {
     ]);
 });
 
-
+Route::get('baca', function () {
+    return view('dashboard/baca', [
+        "title" => "dashboard/baca",
+        "active" => "dashboard/baca"
+    ]);
+});
 
 Route::get('/posts', [PostController::class, 'index']);
 

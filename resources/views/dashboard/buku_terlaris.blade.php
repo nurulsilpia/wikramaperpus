@@ -14,7 +14,7 @@
         <h5 class="card-title text-dark">Judul Buku</h5>
         <p class="card-text"><small class="text-muted">by kahwi leonard</small></p>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor, sit amet faucibus sapien maximus vel. Mauris feugiat massa massa, a lobortis velit posuere sollicitudin. Quisque iaculis enim id porta condimentum. Integer nec purus blandit, sodales arcu nec, finibus quam. Proin congue efficitur nisi.</p>
-        <a href="#" class="btn btn-primary">Baca</a>
+        <a href="baca" class="btn btn-primary">Baca</a>
       </div>
     </div>
   </div>

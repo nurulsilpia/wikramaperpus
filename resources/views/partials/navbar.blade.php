@@ -13,7 +13,7 @@
                 <li class="nav__item"><a href="/galery" class="nav__link {{ Request::is('galery*') ? 'active' : '' }}">Galery</a></li>
 
                 @if (auth()->user())
-                    <li class="nav__item"><a href="#" class="nav__link">Sirkulasi</a></li>
+                    <li class="nav__item"><a href="/sirkulasi" class="nav__link">Sirkulasi</a></li>
                 @endif
                 
                 @auth

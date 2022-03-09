@@ -3,7 +3,7 @@
 <section class="section">
     <div class="section-header card d-block px-5">
         <div class="rounded p-2">
-            <div class="mb-4 text-center">
+            <div class="mb-2 text-center">
                 <h4><marquee>Tentang Kami, Perpustakaan SMK Wikrama</marquee></h4>
             </div>
             

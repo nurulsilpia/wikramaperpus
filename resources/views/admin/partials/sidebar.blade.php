@@ -19,9 +19,7 @@
               <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-person-circle"></i><span>Profile</span></a>
-          </li>
+      
           <li class="nav-item dropdown">
             <a href="/admin/posts" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
             <ul class="dropdown-menu">
@@ -29,9 +27,7 @@
               <li><a class="nav-link" href="/admin/categories">Category</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link"><i class="bi bi-folder2"></i><span>Library</span></a>
-          </li>
+         
           <li class="nav-item dropdown">
             <a href="/admin/galery" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>

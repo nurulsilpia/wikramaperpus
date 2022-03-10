@@ -19,7 +19,7 @@
               <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
             </ul>
           </li>
-      
+          <li class="menu-header">Documentations</li>
           <li class="nav-item dropdown">
             <a href="/admin/posts" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
             <ul class="dropdown-menu">
@@ -28,9 +28,11 @@
             </ul>
           </li>
          
+         
           <li class="nav-item dropdown">
             <a href="/admin/galery" class="nav-link"><i class="bi bi-image-fill"></i><span>Galery</span></a>
           </li>
+          <li class="menu-header">Data</li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown"><i class="bi bi-book-half"></i></i><span>Books</span></a>
             <ul class="dropdown-menu">

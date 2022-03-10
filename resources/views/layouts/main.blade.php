@@ -57,8 +57,8 @@
                   </div>
         </div>
     </footer>
-
-    <div class="banner bg-white  "><br>
+    <br>
+    <div class="banner bg-white"><br>
     <p class="small text-primary mb-0 text-center">&copy; Copyrights. 2022 Perpustakaan SMK Wikrama Indonesia</p><br>
         </div>
 

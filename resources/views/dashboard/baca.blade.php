@@ -6,7 +6,7 @@
     <div class="banner bg-white mb-5 px-4 py-3">
         <h5 class="banner bg-light rounded text-dark mb-3 px-2 py-2 "><marquee>Selamat Membaca</marquee></h5>
         <div class="row mb-5">
-            <div class="col md-2 sm-5 "><div class="card mt-2" style="width: 700px;">
+            <div class="col md-2 sm-5 "><div class="card mt-2 bg-light" style="width: 700px;">
             <div class="row g-0">
             <div class="col-md-4">
                  <img src="assets/img/cover.jpg" class="img-fluid rounded-start" alt="...">

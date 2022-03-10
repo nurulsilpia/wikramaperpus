@@ -16,7 +16,31 @@
                           <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
                           <p class="card-text">Agus Tigus</p>
                           <p class="card-text">PT Gramedia</p>
-                          <a href="#" class="btn btn-primary btn-sm mt-3">Preview</a>
+                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-lg-4 mb-4 item">
+                    <div class="card h-100 shadow">
+                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
+                        <div class="card-body">
+                          <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
+                          <p class="card-text">Agus Tigus</p>
+                          <p class="card-text">PT Gramedia</p>
+                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-4 item">
+                    <div class="card h-100 shadow">
+                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
+                        <div class="card-body">
+                          <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
+                          <p class="card-text">Agus Tigus</p>
+                          <p class="card-text">PT Gramedia</p>
+                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
                         </div>
                     </div>
                 </div>

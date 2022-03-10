@@ -21,13 +21,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        User::create([
-            'name' => 'Jubran',
-            'username' => '11111111',
-            'email' => 'jenniejubran@gmail.com',
-            'password' => bcrypt('12345678')
-        ]);
         User::create([
             'name' => 'Admin',
             'username' => '12345678',
@@ -35,6 +28,15 @@ class DatabaseSeeder extends Seeder
             'is_admin' => 1,
             'password' => bcrypt('12345678')
         ]);
+
+
+        User::create([
+            'name' => 'Jubran',
+            'username' => '11111111',
+            'email' => 'jenniejubran@gmail.com',
+            'password' => bcrypt('12345678')
+        ]);
+
 
         User::factory(3)->create();
 

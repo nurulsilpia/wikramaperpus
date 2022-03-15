@@ -2,53 +2,33 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h3 class="mb-3"><marquee>Selamat Datang di E-book, Selamat Membaca</marquee></h3>
+        
     </div>
     <div class="section-body">
       <div class="photo-gallery pt-3 rounded">
         <div class="container">
-          <div class="row photos">
+          <div class="row">
        
-                <div class="col-lg-4 mb-4 item">
+                <div class="col-sm-6 px-2 ml-5 mt-5  ">
+                    <h3 class="text-primary mb-4"><b>Akses Wikrama Book</b></h3>
+                    <h5>1. Buka Aplikasi Scaner dan Scan QR code di samping</h5>
+                    <h5>2. Isi Kuisioner pada Google form</h5>
+                    <h5>3. Submit Kuisioner dan Akan Muncul Link Download</h5>
+                    <h5>4. Klik Link Tersebut</h5>
+                    <h5>5. Unduh Aplikasi Wikrama Book</h5>
+                </div>
+
+                <div class="col-sm-4 px-2 mb-5 ml-5 pl-5 mt-5">
                     <div class="card h-100 shadow">
-                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
-                        <div class="card-body">
-                          <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
-                          <p class="card-text">Agus Tigus</p>
-                          <p class="card-text">PT Gramedia</p>
-                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
-                        </div>
+                            <img src="/assets/img/qr.png" class="py-2 px-2" alt="">
                     </div>
                 </div>
 
-                 <div class="col-lg-4 mb-4 item">
-                    <div class="card h-100 shadow">
-                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
-                        <div class="card-body">
-                          <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
-                          <p class="card-text">Agus Tigus</p>
-                          <p class="card-text">PT Gramedia</p>
-                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 item">
-                    <div class="card h-100 shadow">
-                            <a href="https://source.unsplash.com/500x400?library" data-lightbox="photos"><img src="https://source.unsplash.com/500x400?library" class="card-img-top" alt=""></a>
-                        <div class="card-body">
-                          <h5 class="card-title fw-bolder">Terlahir Miskin =Privilege</h5>
-                          <p class="card-text">Agus Tigus</p>
-                          <p class="card-text">PT Gramedia</p>
-                          <a href="baca" class="btn btn-primary btn-sm mt-3">Preview</a>
-                        </div>
-                    </div>
-                </div>
         
           </div>
         </div>
       </div>
     </div>
-</section>
+</section><br><br><br><br><br><br><br>
  
 @endsection

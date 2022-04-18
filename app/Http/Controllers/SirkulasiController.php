@@ -124,6 +124,6 @@ class SirkulasiController extends Controller
     {
         Sirkulasi::destroy($sirkulasi->id);
 
-        return redirect('/admin/sirkulasi')->with('danger', 'Data berhasil dihapus!');
+        return redirect('/admin/sirkulasi')->with('delete', 'Data berhasil dihapus!');
     }
 }

@@ -29,7 +29,7 @@
             <tr>
               <th scope="col">No</th>
               <th scope="col">Jenis</th>
-              <th scope="col" colspan="2">Action</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -74,7 +74,7 @@
           </div>
           <br>
           <button type="submit" class="btn btn-primary">Create jenis</button>
-          <button type="button" class="btn btn-secondary text-dark mx-3" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-dark text-white mx-3" data-bs-dismiss="modal">Close</button>
         </form>
       </div>
     </div>

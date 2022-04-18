@@ -33,7 +33,7 @@
               <th scope="col">Tahun Terbit</th>
               <th scope="col">ISBN</th>
               <th scope="col">Lokasi</th>
-              <th scope="col" colspan="2">Action</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -48,14 +48,23 @@
                 <td> {{ $book->tahun_terbit }}</td>
                 <td> {{ $book->isbn }}</td>
                 <td> {{ $book->lokasi }}</td>
-                <td>
-                  <a href="/admin/books/{{ $book->judul }}" class="badge bg-info text-white"><i class="bi bi-eye"></i></span></a>
-                  <a href="/admin/books/{{ $book->judul }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
-                  <form action="/admin/books/{{ $book->judul }}" method="post" class="d-inline">
-                    @method('delete')
-                    @csrf
-                    <button class="badge bg-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>
-                  </form>
+                <td class="text-center">
+                  <div class="btn-group dropstart">
+                    <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{-- <i class="bi bi-three-dots-vertical"></i> --}}
+                    </button>
+                    <ul class="dropdown-menu px-3">
+                      <li class="mb-1 text-center"><a class="dropdown-item btn btn-info text-white" href="/admin/books/{{ $book->judul }}"><i class="bi bi-eye"></i> Show Data</a></li>
+                      <li class="mb-1 text-center"><a class="dropdown-item btn btn-warning text-white" href="/admin/books/{{ $book->judul }}/edit"><i class="bi bi-pencil-square"></i> Edit Data</a></li>
+                      <li class="text-center">
+                        <form action="/admin/books/{{ $book->judul }}" method="post" class="d-inline">
+                          @method('delete')
+                          @csrf
+                          <button style="width: 100%;" class="btn btn-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i> Delete Data</button>
+                        </form>
+                      </li>
+                    </ul>
+                  </div>
                 </td>
             </tr>
             @endforeach

@@ -20,7 +20,7 @@
     @endif
 
     <div class="table-responsive col-lg-5">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create">
+      <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#create">
         Create new Category
       </button>
 
@@ -29,7 +29,7 @@
             <tr>
               <th scope="col">No</th>
               <th scope="col">Kategori</th>
-              <th scope="col" colspan="2">Action</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>

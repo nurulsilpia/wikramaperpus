@@ -4,7 +4,7 @@
 <section class="section">
   <div class="section-header d-block">
     <div class="border-bottom mb-3">
-      <h1 class="h2 mb-2">Create Data</h1>
+      <h1 class="h2 mb-2">Edit Data</h1>
     </div>
 
     <form action="/admin/sirkulasi/{{ $sirkulasi->id }}" method="POST" class="mb-5 col-lg-10">

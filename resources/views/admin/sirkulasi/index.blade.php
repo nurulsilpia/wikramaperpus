@@ -83,13 +83,22 @@
                     echo 'Rp ' . $lengt * 500;
                   ?>
                 </td>
-                <td>
-                  <a href="/admin/sirkulasi/{{ $sirkulasi->id }}/edit" class="badge bg-warning text-white my-1"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/admin/sirkulasi/{{ $sirkulasi->id }}" method="post" class="d-inline">
-                        @method('delete')
-                        @csrf
-                        <button class="badge bg-danger border-0 text-white my-1" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>
-                      </form>
+                <td class="text-center">
+                  <div class="btn-group dropstart">
+                    <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{-- <i class="bi bi-three-dots-vertical"></i> --}}
+                    </button>
+                    <ul class="dropdown-menu px-3">
+                      <li class="mb-1 text-center"><a class="dropdown-item btn btn-warning text-white" href="/admin/sirkulasi/{{ $sirkulasi->id }}/edit"><i class="bi bi-pencil-square"></i> Edit Data</a></li>
+                      <li class="text-center">
+                        <form action="/admin/sirkulasi/{{ $sirkulasi->id }}" method="post" class="d-inline">
+                          @method('delete')
+                          @csrf
+                          <button style="width: 100%;" class="btn btn-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i> Delete Data</button>
+                        </form>
+                      </li>
+                    </ul>
+                  </div>
                 </td>
             </tr>
             @endforeach

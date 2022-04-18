@@ -1,10 +1,10 @@
-@extends('layouts.main')
+@extends('admin.layouts.main')
 @section('content')
 
 <section class="section">
   <div class="section-header d-block">
     <div class="border-bottom mb-3">
-      <h1 class="h2 mb-2">Create Post</h1>
+      <h1 class="h2 mb-2">Edit Book</h1>
     </div>
 
     <form action="/admin/books/{{ $book->judul }}" method="POST" class="mb-5 col-lg-10" enctype="multipart/form-data">

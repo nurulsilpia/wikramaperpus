@@ -1,9 +1,9 @@
 @extends('admin.layouts.main')
 @section('content')
 <section>
-    <div class="section-header">
+    <div class="section-header card px-3">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Edit Post</h1>
+            <h1 class="h2">Edit Article</h1>
         </div>
 
         <div class="col-lg-8">

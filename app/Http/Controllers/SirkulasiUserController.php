@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JenisBook;
 use Illuminate\Http\Request;
+use App\Models\Sirkulasi;
 
-class JenisBookController extends Controller
+class SirkulasiUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class JenisBookController extends Controller
      */
     public function index()
     {
-        return view('adminJenisBooks.index',[
-            'jenises' => JenisBook::all()
+
+        return view('sirkulasi/sirkulasi', [
+            'sirkulasis' => Sirkulasi::all()
         ]);
     }
 
@@ -37,13 +38,7 @@ class JenisBookController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'jenis' => 'required'
-        ]);
-
-        JenisBook::create($validatedData);
-
-        return redirect('/admin/jenis-books')->with('success', 'Jenis Buku Berhasil di buat');
+        //
     }
 
     /**
@@ -63,11 +58,9 @@ class JenisBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(JenisBook $jenisBook)
+    public function edit($id)
     {
-        return view('adminJenisBooks.edit', [
-            'jenisBook' => $jenisBook
-        ]);
+        //
     }
 
     /**
@@ -77,17 +70,9 @@ class JenisBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, JenisBook $jenisBook)
+    public function update(Request $request, $id)
     {
-        $rules = [
-            'jenis' => "required",
-        ];
-
-        $validatedData = $request->validate($rules);
-
-        JenisBook::where('id', $jenisBook->id)->update($validatedData);
-
-        return redirect('/admin/jenis-books')->with('success', 'Kategory Buku Berhasil Di Update!');
+        //
     }
 
     /**
@@ -96,9 +81,8 @@ class JenisBookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(JenisBook $jenisBook )
+    public function destroy($id)
     {
-        JenisBook::destroy($jenisBook->id);
-        return redirect('/admin/jenis-books')->with('delete', 'Jenis Buku Berhasil Di Hapus!');
+        //
     }
 }

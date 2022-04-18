@@ -1,12 +1,18 @@
 <div class="main-sidebar">
   <aside id="sidebar-wrapper">
-    <div class="sidebar-brand">
+    {{-- <div class="sidebar-brand">
       <div class="media">
         <div class="media-body">
-           <h6 class="mt-4 mr-2 text-dark">Perpustakaan Wikrama</h6>
+           <h6 class="mt-4 mr-2 text-dark"><img src="/img/logo.png" width="35" class="rounded-circle"> Perpustakaan Wikrama</h6>
         </div>
-       </div>
       </div>
+    </div> --}}
+    <div class="sidebar-brand">
+      <a href="/"><img src="/img/logo.png" width="35" class="rounded-circle"> Perpustakaan</a>
+    </div>
+    <div class="sidebar-brand sidebar-brand-sm">
+      <a href="/">P</a>
+    </div>
 
     <ul class="sidebar-menu">
         @can('admin')

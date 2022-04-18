@@ -14,6 +14,7 @@ use App\Http\Controllers\SirkulasiController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\JenisBookController;
+use App\Http\Controllers\SirkulasiUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,22 +67,16 @@ Route::get('profile-perpust', function () {
     ]);
 });
 
-//galery
-// Route::get('galery', function () {
-//     return view('galery/galery', [
-//         "title" => "galery/galery",
-//         "active" => "galery/galery"
-//     ]);
-// });
 Route::get('/galery', [GaleryController::class, 'index']);
 
 //sirkulasi
-Route::get('sirkulasi', function () {
-    return view('sirkulasi/sirkulasi', [
-        "title" => "sirkulasi/sirkulasi",
-        "active" => "sirkulasi/sirkulasi"
-    ]);
-});
+// Route::get('sirkulasi', function () {
+//     return view('sirkulasi/sirkulasi', [
+//         "title" => "sirkulasi/sirkulasi",
+//         "active" => "sirkulasi/sirkulasi"
+//     ]);
+// });
+Route::get('/sirkulasi', [SirkulasiUserController::class, 'index']);
 
 Route::get('baca', function () {
     return view('dashboard/baca', [

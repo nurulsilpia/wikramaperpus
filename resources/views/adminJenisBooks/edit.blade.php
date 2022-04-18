@@ -7,20 +7,20 @@
         </div>
         
         <div class="col-lg-6">
-            <form action="/admin/category-books/{{ $categoryBook->id }}" method="post">
+            <form action="/admin/jenis-books/{{ $jenisBook->id }}" method="post">
                 @method('put')
                 @csrf
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name Category</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('name', $categoryBook->name) }}">
-                    @error('name')
+                    <label for="jenis" class="form-label">Jenis Buku</label>
+                    <input type="text" class="form-control @error('jenis') is-invalid @enderror" id="jenis" name="jenis" required autofocus value="{{ old('jenis', $jenisBook->jenis) }}">
+                    @error('jenis')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Update Category</button>
+                <button type="submit" class="btn btn-primary">Update Jenis</button>
             </form>
         </div>
     </div>

@@ -31,7 +31,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Rombel</th>
                     <th scope="col">Rayon</th>
-                    <th scope="col" colspan="2">Action</th>
+                    <th scope="col" class="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,7 @@
                       <td> {{ $siswa->nama }} </td>
                       <td> {{ $siswa->rombel }} </td>
                       <td> {{ $siswa->rayon }} </td>
-                      <td>
+                      <td class="text-center">
                         <a href="/admin/siswa/{{ $siswa->id }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
                         <form action="/admin/siswa/{{ $siswa->id }}" method="post" class="d-inline">
                           @method('delete')

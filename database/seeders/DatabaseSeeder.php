@@ -75,16 +75,18 @@ class DatabaseSeeder extends Seeder
         JenisBook::create([
             'jenis' => 'Buku Fisik'
         ]);
-        
+
         Book::create([
             'jenis_id' => 1,
             'category_id' => 1,
             'judul' => 'Bibi Gill',
+            'isi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor,',
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka',
             'tahun_terbit' => '2022',
             'isbn' => '12345678',
             'jumlah_buku' => 3,
+            'jumlah_baca' => 100,
             'lokasi' => 'Rak Novel',
             'tanggal_input' => '2022-3-10'
         ]);
@@ -93,11 +95,13 @@ class DatabaseSeeder extends Seeder
             'jenis_id' => 2,
             'category_id' => 1,
             'judul' => 'SagaraS',
+            'isi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor,',
             'pengarang' => 'Tere Liye',
             'penerbit' => 'Gramedia Pustaka',
             'tahun_terbit' => '2022',
             'isbn' => '12345678',
             'jumlah_buku' => 2,
+            'jumlah_baca' => 100,
             'lokasi' => 'Rak Novel',
             'tanggal_input' => '2022-3-09'
         ]);
@@ -106,11 +110,13 @@ class DatabaseSeeder extends Seeder
             'jenis_id' => 1,
             'category_id' => 2,
             'judul' => 'Dasar Laravel',
+            'isi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor,',
             'pengarang' => 'WPU Unpas',
             'penerbit' => 'GM Media',
             'tahun_terbit' => '2030',
             'isbn' => '12345678',
             'jumlah_buku' => 1,
+            'jumlah_baca' => 100,
             'lokasi' => 'Rak Buku',
             'tanggal_input' => '1999-06-09'
         ]);

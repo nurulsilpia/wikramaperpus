@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\JenisBookController;
 use App\Http\Controllers\SirkulasiUserController;
+use App\Models\{Book};
 
 /*
 |--------------------------------------------------------------------------
@@ -78,12 +79,18 @@ Route::get('/galery', [GaleryController::class, 'index']);
 // });
 Route::get('/sirkulasi', [SirkulasiUserController::class, 'index']);
 
-Route::get('baca', function () {
+Route::get('baca/{id}', function ($id) {
+
+    $data = Book::where('id',$id)->first();
+    $data->jumlah_baca += 1;
+    $data->save();
+
     return view('dashboard/baca', [
+        'data' => $data,
         "title" => "dashboard/baca",
         "active" => "dashboard/baca"
     ]);
-});
+})->name('baca');
 
 Route::get('/posts', [PostController::class, 'index']);
 
@@ -110,13 +117,13 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function(){
         return view('admin.index');
     });
-    
+
     Route::get('/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
     Route::resource('/posts', AdminPostController::class);
-    
+
     Route::get('/categories/checkSlug', [AdminCategoryController::class, 'checkSlug']);
     Route::resource('/categories', AdminCategoryController::class)->except('show');
-    
+
     Route::resource('/books', BooksController::class);
     Route::resource('/category-books', CategoryBookController::class);
     Route::resource('/jenis-books', JenisBookController::class);

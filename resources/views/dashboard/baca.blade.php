@@ -13,9 +13,12 @@
             </div>
             <div class="col-md-8 ">
              <div class="card-body">
-             <h5 class="card-title text-dark">Judul Buku</h5>
-                <p class="card-text mb-3"><small class="text-muted">by kahwi leonard</small></p>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor, sit amet faucibus sapien maximus vel. Mauris feugiat massa massa, a lobortis velit posuere sollicitudin. Quisque iaculis enim id porta condimentum. Integer nec purus blandit, sodales arcu nec, finibus quam. Proin congue efficitur nisi.</p>
+             <h5 class="card-title text-dark">{{ $data->judul }}</h5>
+                <p class="card-text mb-3"><small class="text-muted">by {{ $data->pengarang }}</small></p>
+                <p class="card-text" style="width: 40ch;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;">{{ $data->isi }}</p>
              </div>
             </div>
             </div>
@@ -29,25 +32,25 @@
                  <tr>
                     <th>Pengarang</th>
                     <td class="px-3">:</td>
-                    <td>Kawhi</td>
+                    <td>{{ $data->pengarang }}</td>
                 </tr>
                 <tr>
                     <th>Penerbit</th>
                     <td class="px-3">:</td>
-                    <td>PT Gramedia</td>
+                    <td>{{ $data->penerbit }}</td>
                 </tr>
                 <tr>
                     <th>Tahun Terbit</th>
                     <td class="px-3">:</td>
-                    <td>2019</td>
+                    <td>{{ $data->tahun_terbit }}</td>
                 </tr>
                 <tr>
                     <th>ISBN</th>
                     <td class="px-3">:</td>
-                    <td>129282</td>
+                    <td>{{ $data->isbn }}</td>
                 </tr>
                 </table>
-                
+
                 </div>
              </div>
             </div>
@@ -55,25 +58,11 @@
       <hr>
 
       <div class="py-5">
-      <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sagittis velit dolor, sit amet faucibus sapien maximus vel. Mauris feugiat massa massa, a lobortis velit posuere sollicitudin. Quisque iaculis enim id porta condimentum. Integer nec purus blandit, sodales arcu nec, finibus quam. Proin congue efficitur nisi.</p>
+      <p class="">{{ $data->isi }}</p>
       </div>
 
-      <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center mt-5">
-                <li class="page-item disabled">
-                     <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
-
 </div>
 </div>
-</section>    
+</section>
 
 @endsection

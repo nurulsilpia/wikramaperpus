@@ -124,7 +124,7 @@ class BooksController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('post-images');
         }
-        
+
         Book::where('id', $book->id)
             ->update($validatedData);
 

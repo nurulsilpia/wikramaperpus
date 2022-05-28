@@ -20,7 +20,7 @@
 </head>
 <body>
     @include('partials.navbar')
-    
+
     <div class="container py-5">
         @yield('content')
     </div>
@@ -35,7 +35,7 @@
                           <li><a href="#">CV IDS Rumah Pendidikan</a></li>
                           <li><a href="#"></a></li>
                       </ul>
-                    
+
                   </div>
                   <div class="col-lg-3 col-md-6">
                       <h5 class="text-white mb-3">Contact Us </h5><br>
@@ -76,6 +76,10 @@
 
     {{-- Highchart --}}
     <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    {{-- IonIcon --}}
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     @stack('chart')
 </body>

@@ -18,12 +18,14 @@ class CreateBooksTable extends Migration
             $table->foreignId('jenis_id');
             $table->foreignId('category_id');
             $table->string('judul');
+            $table->string('isi');
             $table->string('pengarang')->nullable();
             $table->string('penerbit')->nullable();
             $table->char('tahun_terbit')->nullable();
             $table->string('image')->nullable();
             $table->char('isbn', 25)->nullable();
             $table->char('jumlah_buku');
+            $table->integer('jumlah_baca');
             $table->string('lokasi');
             $table->date('tanggal_input');
             $table->timestamps();

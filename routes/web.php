@@ -3,17 +3,18 @@
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminPostController;
-use App\Http\Controllers\AdminGaleryController;
-use App\Http\Controllers\CategoryBookController;
-use App\Http\Controllers\SirkulasiController;
-use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\DataSiswaController;
 use App\Http\Controllers\JenisBookController;
+use App\Http\Controllers\SirkulasiController;
+use App\Http\Controllers\AdminGaleryController;
+use App\Http\Controllers\CategoryBookController;
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\SirkulasiUserController;
 
 /*
@@ -124,6 +125,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('/galery', AdminGaleryController::class);
 
     Route::resource('/siswa', DataSiswaController::class);
+
+    Route::resource('/user', UserController::class);
 
     Route::resource('/sirkulasi', SirkulasiController::class);
 });

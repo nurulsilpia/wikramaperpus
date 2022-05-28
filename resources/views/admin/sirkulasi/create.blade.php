@@ -10,8 +10,8 @@
     <form action="/admin/sirkulasi" method="POST" class="mb-5 col-lg-10">
                 @csrf
                 <div class="mb-3">
-                    <label for="siswa" class="form-label">Nama Siswa</label>
-                    <select class="form-select" name="siswa_id" aria-label="Default select example">
+                    <label for="siswa" class="form-label">Nama</label>
+                    <select class="form-control" name="siswa_id" aria-label="Default select example">
                         @foreach ($siswas as $siswa)
                             @if (old('siswa_id') == $siswa->id)
                                 <option value="{{ $siswa->id }}" selected>{{ $siswa->nis }} || {{ $siswa->nama }}</option>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul Buku</label>
-                    <select class="selectpicker" name="book_id" aria-label="Default select example" data-live-search="true">
+                    <select class="form-control selectpicker" name="book_id" aria-label="Default select example" data-live-search="true">
                         @foreach ($books as $book)
                             @if (old('book_id') == $book->id)
                                 <option value="{{ $book->id }}" selected>{{ $book->judul }} || {{ $book->pengarang }}</option>

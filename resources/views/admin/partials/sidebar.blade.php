@@ -17,14 +17,10 @@
     <ul class="sidebar-menu">
         @can('admin')
           <li class="menu-header">Administator</li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="#">Main</a></li>
-              <li><a class="nav-link" href="#">Buku terbaru</a></li>
-              <li><a class="nav-link" href="#">Buku peminat terbanyak</a></li>
-            </ul>
+          <li class="nav-item">
+            <a href="/admin" class="nav-link"><i class="bi bi-postcard-fill"></i><span>Dashboard</span></a>
           </li>
+
           <li class="menu-header">Documentations</li>
           <li class="nav-item dropdown">
             <a href="/admin/posts" class="nav-link has-dropdown"><i class="bi bi-postcard-fill"></i><span>Article</span></a>
@@ -49,6 +45,9 @@
           </li>
           <li class="nav-item dropdown">
             <a href="/admin/siswa" class="nav-link"><i class="bi bi-person-circle"></i><span>Data Siswa</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="/admin/user" class="nav-link"><i class="bi bi-person-plus-fill"></i><span>Data User</span></a>
           </li>
           <li class="nav-item dropdown">
             <a href="/admin/sirkulasi" class="nav-link"><i class="bi bi-arrow-repeat"></i><span>Sirkulasi</span></a>

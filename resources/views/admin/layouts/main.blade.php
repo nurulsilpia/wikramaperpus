@@ -72,7 +72,7 @@
                         <div id="clockdate">
                             <div class="clockdate-wrapper">
                                 <div id="clock"></div>
-                                <div id="date"></div>
+                                <div id="date" style="font-size: 1.25rem;"></div>
                             </div>
                         </div>
                     </body>

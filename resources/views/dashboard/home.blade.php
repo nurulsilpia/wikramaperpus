@@ -13,78 +13,79 @@
         <div class="buku-terbaru my-">
             <h3 class="text-dark fw-bolder">Buku Terbaru</h3><br>
             <div class="d-flex">
-                @foreach (DB::table('books')->orderBy('id', 'DESC')->limit(4)->get() as $item)
-                <div class="mr-5">
-                    <div class="card shadow" style="width: 15rem;">
-                        <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
-                           <div class="card-body">
-                              <h5 class="card-title">{{ $item->judul }}</h5>
-                              <p class="card-text">{{ $item->pengarang }}</p>
-                              <div class="d-flex align-items-center">
-                                  <ion-icon name="eye-outline"></ion-icon>
-                                  <p class="ms-1">{{ $item->jumlah_baca }}</p>
-                              </div><br>
-                              <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
-                           </div>
-                       </div>
-                </div>
+                {{-- @foreach (DB::table('books')->orderBy('id', 'DESC')->limit(4)->get() as $item) --}}
+                @foreach ($newBooks as $item)
+                    <div class="mr-5">
+                        <div class="card shadow" style="width: 15rem;">
+                            <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
+                                <p class="text-white">{{ $item->jenis->jenis }}</p>
+                            </div>
+
+                            @if ($item->image)
+                                <div style="max-height: 400px; overflow: hidden;">
+                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                                </div>
+                            @else
+                                <img src="assets/img/cover.png" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                            @endif
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->judul }}</h5>
+                                <p class="card-text">{{ $item->pengarang }}</p>
+                                <div class="d-flex align-items-center">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                    <p class="ms-1">{{ $item->jumlah_baca }}</p>
+                                </div><br>
+                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
+                            </div>
+                        </div>
+                    </div>
                  @endforeach
-            </div>
+                </div>
+
+                {{-- Pagination buku terbaru --}}
+                <div class="d-flex justify-content-center mt-3">
+                   {{ $newBooks->links() }}
+               </div>
         </div><br><br>
 
         <div class="peminat-terbanyak">
             <h3 class="text-dark fw-bolder">Buku Peminat Terbanyak</h3><br>
             <div class="d-flex">
 
-                @foreach (DB::table('books')->orderBy('jumlah_baca', 'DESC')->limit(4)->get() as $item)
-                <div class="mr-5">
-                    <div class="card shadow" style="width: 15rem;">
-                        <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
-                           <div class="card-body">
-                              <h5 class="card-title">{{ $item->judul }}</h5>
-                              <p class="card-text">{{ $item->pengarang }}</p>
-                              <div class="d-flex align-items-center">
-                                  <ion-icon name="eye-outline"></ion-icon>
-                                  <p class="ms-1">{{ $item->jumlah_baca }}</p>
-                              </div><br>
-                              <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
-                           </div>
-                       </div>
-                </div>
+                {{-- @foreach (DB::table('books')->orderBy('jumlah_baca', 'DESC')->limit(4)->get() as $item) --}}
+                @foreach ($fmsBooks as $item)
+                    <div class="mr-5">
+                        <div class="card shadow" style="width: 15rem;">
+                            <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
+                                <p class="text-white">{{ $item->jenis->jenis }}</p>
+                            </div>
+
+                                @if ($item->image)
+                                    <div style="max-height: 400px; overflow: hidden;">
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                                    </div>
+                                @else
+                                    <img src="assets/img/cover.png" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                                @endif
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->judul }}</h5>
+                                <p class="card-text">{{ $item->pengarang }}</p>
+                                <div class="d-flex align-items-center">
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                    <p class="ms-1">{{ $item->jumlah_baca }}</p>
+                                </div><br>
+                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
+                            </div>
+                        </div>
+                    </div>
                  @endforeach
+            </div>
 
-                 {{-- <div class="ml-5">
-                     <div class="card shadow" style="width: 15rem;">
-                         <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
-                              <div class="card-body">
-                                 <h5 class="card-title">Judul</h5>
-                                 <p class="card-text">Some quick example text to build on the card </p><br>
-                                 <a href="/buku-terlaris" class="btn btn-primary btn-sm">Preview</a>
-                              </div>
-                     </div>
-                 </div>
-
-                 <div class="ml-5">
-                     <div class="card shadow" style="width: 15rem;">
-                         <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
-                              <div class="card-body">
-                                 <h5 class="card-title">Judul</h5>
-                                 <p class="card-text">Some quick example text to build on the card </p><br>
-                                 <a href="/buku-terlaris" class="btn btn-primary btn-sm">Preview</a>
-                              </div>
-                     </div>
-                 </div>
-                 <div class="ml-5">
-                     <div class="card shadow" style="width: 15rem;">
-                         <img src="assets/img/cover.jpg" class="card-img-top"  alt="cover">
-                              <div class="card-body">
-                                 <h5 class="card-title">Judul</h5>
-                                 <p class="card-text">Some quick example text to build on the card </p><br>
-                                 <a href="/buku-terbaru" class="btn btn-primary btn-sm">Preview</a>
-                              </div>
-                     </div>
-                 </div> --}}
-
+            {{-- Pagination buku minat terbanyak --}}
+            <div class="d-flex justify-content-center mt-3">
+                {{ $newBooks->links() }}
             </div>
         </div>
         <br><br>

@@ -9,16 +9,23 @@
             <div class="col md-2 sm-5 "><div class="card mt-2 bg-light" style="width: 700px;">
             <div class="row g-0">
             <div class="col-md-4">
-                 <img src="assets/img/cover.jpg" class="img-fluid rounded-start" alt="...">
+                 {{-- <img src="assets/img/cover.jpg" class="img-fluid rounded-start" alt="..."> --}}
+                 @if ($data->image)
+                    <div style="max-height: 300px; overflow: hidden;">
+                        <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                    </div>
+                @else
+                    <img src="/assets/img/cover.png" alt="{{ $data->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
+                @endif
             </div>
             <div class="col-md-8 ">
              <div class="card-body">
              <h5 class="card-title text-dark">{{ $data->judul }}</h5>
                 <p class="card-text mb-3"><small class="text-muted">by {{ $data->pengarang }}</small></p>
-                <p class="card-text" style="width: 40ch;
+                {{-- <p class="card-text" style="width: 40ch;
                 overflow: hidden;
                 white-space: nowrap;
-                text-overflow: ellipsis;">{{ $data->isi }}</p>
+                text-overflow: ellipsis;">{{ $data->isi }}</p> --}}
              </div>
             </div>
             </div>
@@ -57,8 +64,17 @@
         </div>
       <hr>
 
-      <div class="py-5">
-      <p class="">{{ $data->isi }}</p>
+      <div class="">
+        {{-- <p class="">{{ $data->isi }}</p> --}}
+        {{-- <iframe src="{{ asset('storage/' . $data->isi) }}" width="100%" height="100%"> --}}
+            <object width="100%" height="1000" type="application/pdf" data="{{ asset('storage/' . $data->isi) }}">
+                {{-- if the book doesn't have pdf --}}
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class='bx bxs-message-error bx-tada' style="font-size: 2rem;"></i> Maaf, buku ini adalah buku fisik. Silahkan kunjungi Perpustakaan Wikrama...
+                    </div>
+                </div>
+            </object>
       </div>
 
 </div>

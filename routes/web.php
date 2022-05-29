@@ -15,6 +15,7 @@ use App\Http\Controllers\SirkulasiController;
 use App\Http\Controllers\AdminGaleryController;
 use App\Http\Controllers\CategoryBookController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\HomeUserController;
 use App\Http\Controllers\SirkulasiUserController;
 use App\Models\{Book};
 
@@ -30,12 +31,15 @@ use App\Models\{Book};
 */
 
 //dashboard
-Route::get('/', function () {
-    return view('dashboard/home', [
-        "title" => "dashboard/home",
-        "active" => "dashboard/home"
-    ]);
-});
+// Route::get('/', function () {
+//     return view('dashboard/home', [
+//         "title" => "dashboard/home",
+//         "active" => "dashboard/home"
+//     ]);
+// });
+
+//dashboard
+Route::get('/', [HomeUserController::class, 'index']);
 
 Route::get('buku-terbaru', function () {
     return view('dashboard/buku_terbaru', [

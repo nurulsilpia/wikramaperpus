@@ -45,6 +45,7 @@ class BooksController extends Controller
     {
         $validatedData = $request->validate([
             'category_id' => 'required',
+            'jenis_id' => 'required',
             'judul' => 'required|max:255',
             'pengarang' => 'required',
             'penerbit' => 'required',
@@ -54,11 +55,16 @@ class BooksController extends Controller
             'jumlah_buku' => 'required',
             'lokasi' => 'required',
             'tanggal_input' => 'required',
-            'image' => 'image|file|max:1024'
+            'image' => 'image|file|max:1024',
+            'isi' => 'file|mimes:pdf'
         ]);
 
         if($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        if($request->file('isi')) {
+            $validatedData['isi'] = $request->file('isi')->store('post-files');
         }
 
         Book::create($validatedData);
@@ -90,7 +96,8 @@ class BooksController extends Controller
     {
         return view('adminBooks.edit', [
             'book' => $book,
-            'categories' => CategoryBook::all()
+            'categories' => CategoryBook::all(),
+            'jenises' => JenisBook::all()
         ]);
     }
 
@@ -105,10 +112,12 @@ class BooksController extends Controller
     {
         $rules = [
             'category_id' => 'required',
+            'jenis_id' => 'required',
             'judul' => 'required|max:255',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'image' => 'image|file|max:1024',
+            'isi' => 'file|mimes:pdf',
             'tahun_terbit' => 'required',
             'isbn' => 'required',
             'jumlah_buku' => 'required',
@@ -123,6 +132,10 @@ class BooksController extends Controller
                 Storage::delete($request->oldImage);
             }
             $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        if($request->file('isi')) {
+            $validatedData['isi'] = $request->file('isi')->store('post-files');
         }
 
         Book::where('id', $book->id)

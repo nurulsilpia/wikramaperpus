@@ -1,3 +1,4 @@
+{{-- @dump($jenises) --}}
 @extends('admin.layouts.main')
 @section('content')
 
@@ -11,12 +12,24 @@
                 @csrf
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
-                    <select class="form-control" name="category_id" aria-label="Default select example">
+                    <select class="form-control" name="category_id" aria-label="Default select example" required>
                         @foreach ($categories as $category)
                             @if (old('category_id') == $category->id)
                                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                             @else
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="jenis" class="form-label">Jenis</label>
+                    <select class="form-control" name="jenis_id" aria-label="Default select example" required>
+                        @foreach ($jenises as $jenis)
+                            @if (old('jenis_id') == $jenis->id)
+                                <option value="{{ $jenis->id }}" selected>{{ $jenis->jenis }}</option>
+                            @else
+                                <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -100,6 +113,16 @@
                         <label for="image" class="form-label">Cover</label>
                         <img class="img-preview img-fluid mb-3 col-sm-5">
                         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
+                        @error('image')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror 
+                    </div>
+                    <div class="mb-3 m-3">
+                        <label for="isi" class="form-label">Isi</label>
+                        <img class="img-preview img-fluid mb-3 col-sm-5">
+                        <input class="form-control @error('isi') is-invalid @enderror" type="file" id="isi" name="isi" onchange="previewImage()">
                         @error('image')
                         <div class="invalid-feedback">
                             {{ $message }}

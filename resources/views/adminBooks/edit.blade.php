@@ -12,7 +12,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
-                    <select class="form-select" name="category_id">
+                    <select class="form-control" name="category_id" autofocus required>
                         @foreach ($categories as $category)
                             @if (old('category_id', $book->category_id) == $category->id)
                                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
@@ -23,8 +23,20 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="jenis" class="form-label">Jenis</label>
+                    <select class="form-control" name="jenis_id" required>
+                        @foreach ($jenises as $jenis)
+                            @if (old('jenis_id', $book->jenis_id) == $jenis->id)
+                                <option value="{{ $jenis->id }}" selected>{{ $jenis->jenis }}</option>
+                            @else
+                                <option value="{{ $jenis->id }}">{{ $jenis->jenis }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="judul" class="form-label">Title</label>
-                    <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" required autofocus value="{{ old('judul', $book->judul) }}">
+                    <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul" required value="{{ old('judul', $book->judul) }}">
                     @error('judul')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -80,24 +92,24 @@
                 </div>
                 <div class="row">
                 <div class="mb-3 col-sm-5">
-                <label for="lokasi" class="form-label">Lokasi</label>
-                <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" required autofocus value="{{ old('lokasi', $book->lokasi) }}">
-                @error('lokasi')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                    <label for="lokasi" class="form-label">Lokasi</label>
+                    <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi" name="lokasi" required autofocus value="{{ old('lokasi', $book->lokasi) }}">
+                    @error('lokasi')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="mb-3 col-sm-5">
-                <label for="tanggal_input" class="form-label">Tanggal Input</label>
-                <input type="date" class="form-control @error('tanggal_input') is-invalid @enderror" id="tanggal_input" name="tanggal_input" required autofocus value="{{ old('tanggal_input', $book->tanggal_input) }}">
-                @error('tanggal_input')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                    <label for="tanggal_input" class="form-label">Tanggal Input</label>
+                    <input type="date" class="form-control @error('tanggal_input') is-invalid @enderror" id="tanggal_input" name="tanggal_input" required autofocus value="{{ old('tanggal_input', $book->tanggal_input) }}">
+                    @error('tanggal_input')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-sm-5">
                     <label for="image" class="form-label">Cover Book</label>
                     <input type="hidden" name="oldImage" value="{{ $book->image }}">
                     @if ($book->image)
@@ -112,7 +124,17 @@
                     </div>
                     @enderror 
                 </div>
-                </div><br>
+                <div class="mb-3 col-sm-5">
+                    <label for="isi" class="form-label">Isi</label>
+                    <img class="img-preview img-fluid mb-3 col-sm-5">
+                    <input class="form-control @error('isi') is-invalid @enderror" type="file" id="isi" name="isi" onchange="previewImage()">
+                    @error('image')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror 
+                </div>
+            </div><br>
                 <button type="submit" class="btn btn-primary">Update Post</button>
             </form>
             

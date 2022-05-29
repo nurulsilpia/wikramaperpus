@@ -15,8 +15,11 @@ class CreateSirkulasisTable extends Migration
     {
         Schema::create('sirkulasis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('siswa_id');
-            $table->foreignId('book_id');
+
+            $table->unsignedBigInteger('siswa_id');
+            $table->unsignedBigInteger('book_id');
+            $table->foreign('siswa_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->char('kode_item');
             $table->char('kode_pinjam');
             $table->date('tanggal_pinjam');

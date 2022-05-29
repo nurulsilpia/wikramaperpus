@@ -8,13 +8,13 @@
     </div>
 
     @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success')}}
-    </div>
+      </div>
     @endif
 
     @if(session()->has('delete'))
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ session('delete')}}
     </div>
     @endif
@@ -25,7 +25,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Nama Siswa</th>
+              <th scope="col">Nama Peminjam</th>
               <th scope="col">Kode Item</th>
               <th scope="col">Judul</th>
               <th scope="col">Kode Pinjam</th>
@@ -35,14 +35,14 @@
               <th scope="col">Keterangan</th>
               <th scope="col">Ketelatan</th>
               <th scope="col">Denda</th>
-              <th scope="col" colspan="2">Action</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
             @foreach( $sirkulasis as $sirkulasi)
             <tr>
                 <td> {{ $loop->iteration }} </td>
-                <td> {{ $sirkulasi->siswa->nama }}</td>
+                <td> {{ $sirkulasi->user->name }}</td>
                 <td> {{ $sirkulasi->kode_item }}</td>
                 <td> {{ $sirkulasi->book->judul }}</td>
                 <td> {{ $sirkulasi->kode_pinjam }}</td>
@@ -72,6 +72,7 @@
                   ?>
                 </td>
                 <td>
+                  {{-- ini denda --}}
                   <?php
                     $pinjam = new DateTime($sirkulasi->tanggal_pinjam);
                     $kembali = new DateTime($sirkulasi->tanggal_kembali);

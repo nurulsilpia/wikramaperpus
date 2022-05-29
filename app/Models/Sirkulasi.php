@@ -13,6 +13,11 @@ class Sirkulasi extends Model
 
     protected $guarded = ['id'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function siswa()
     {
         return $this->belongsTo(DataSiswa::class);

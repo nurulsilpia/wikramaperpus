@@ -11,13 +11,13 @@
                 @method('put')
                 @csrf
                 <div class="mb-3">
-                    <label for="siswa" class="form-label">Nama Siswa</label>
-                    <select class="form-select" name="siswa_id" aria-label="Default select example">
-                        @foreach ($siswas as $siswa)
-                            @if (old('siswa_id', $sirkulasi->siswa_id) == $siswa->id)
-                                <option value="{{ $siswa->id }}" selected>{{ $siswa->nis }} || {{ $siswa->nama }}</option>
+                    <label for="user" class="form-label">Nama Peminjam</label>
+                    <select class="form-control" name="user_id" aria-label="Default select example">
+                        @foreach ($users as $user)
+                            @if (old('user_id', $sirkulasi->user_id) == $user->id)
+                                <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
                             @else
-                                <option value="{{ $siswa->id }}">{{ $siswa->nis }} || {{ $siswa->nama }}</option>
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul Buku</label>
-                    <select class="selectpicker" name="book_id" aria-label="Default select example" data-live-search="true">
+                    <select class="form-control selectpicker" name="book_id" aria-label="Default select example" data-live-search="true">
                         @foreach ($books as $book)
                             @if (old('book_id', $sirkulasi->book_id) == $book->id)
                                 <option value="{{ $book->id }}" selected>{{ $book->judul }} || {{ $book->pengarang }}</option>

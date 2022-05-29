@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\DataSiswa;
 use Illuminate\Http\Request;
 use App\Models\Sirkulasi;
+use App\Models\User;
 use DateTime;
 use Illuminate\Support\Carbon;
 use phpDocumentor\Reflection\DocBlock\Tags\Since;
@@ -34,7 +35,8 @@ class SirkulasiController extends Controller
     {
         return view('admin.sirkulasi.create', [
             'sirkulasis' => Sirkulasi::all(),
-            'siswas' => DataSiswa::all(),
+            // 'siswas' => DataSiswa::all(),
+            'users' => User::all(),
             'books' => Book::all()
         ]);
     }
@@ -48,7 +50,8 @@ class SirkulasiController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'siswa_id' => 'required',
+            // 'siswa_id' => 'required',
+            'user_id' => 'required',
             'kode_item' => 'required',
             'book_id' => 'required',
             'keterangan' => 'required',
@@ -85,6 +88,7 @@ class SirkulasiController extends Controller
         return view('admin.sirkulasi.edit', [
             'sirkulasi' => $sirkulasi,
             'siswas' => DataSiswa::all(),
+            'users' => User::all(),
             'books' => Book::all()
         ]);
     }
@@ -99,7 +103,8 @@ class SirkulasiController extends Controller
     public function update(Request $request, Sirkulasi $sirkulasi)
     {
         $validatedData = $request->validate([
-            'siswa_id' => 'required',
+            // 'siswa_id' => 'required',
+            'user_id' => 'required',
             'kode_item' => 'required',
             'book_id' => 'required',
             'keterangan' => 'required',

@@ -8,7 +8,7 @@
             <div class="col md-2 sm-5 ml-2">Nama : {{ Auth::user()->name }}</div>
             <div class="col md-2 sm-5 ml-2">NIS : {{ Auth::user()->username }}</div>
         </div>
-        <table class="table table-sm table-striped" id="tableAll">
+        <table class="table table-striped table-sm" id="tableAll">
           <thead class="table-light">
             <tr>
               <th scope="col">No</th>
@@ -28,7 +28,7 @@
             @foreach (DB::table('sirkulasis')->get() as $key => $item)
             <tr>
                 <td>{{ $key + 1 }}</td>
-                <td>{{ DB::table('users')->where('id', $item->siswa_id)->first()->name }}</td>
+                <td>{{ DB::table('users')->where('id', $item->user_id)->first()->name }}</td>
                 <td>{{ $item->kode_item }}</td>
                 <td>{{ DB::table('books')->where('id', $item->book_id)->first()->judul }}</td>
                 <td>{{ $item->kode_pinjam }}</td>
@@ -51,7 +51,19 @@
 
                 @endphp
                 <td>{{ $difff->format("%R%a days")  }}</td>
-                <td></td>
+                <td>
+                  {{-- ini denda --}}
+                  @php
+                    $pinjam = new DateTime($item->tanggal_pinjam);
+                    $kembali = new DateTime($item->tanggal_kembali);
+                    $interval = $pinjam->diff($kembali);
+                    
+                    $today = new DateTime("now");
+                    $lengt = $today->diff($kembali)->format('%a');
+                    
+                    echo 'Rp ' . $lengt * 500;
+                  @endphp
+                </td>
             </tr>
             @endforeach
           </tbody>

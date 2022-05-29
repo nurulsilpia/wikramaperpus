@@ -6,7 +6,7 @@
         <h1 class="h2">Welcomback, {{ auth()->user()->name }}</h1>
     </div>
 </div>
-<div class="section-body d-flex justify-content-between">
+<div class="section-body d-flex flex-wrap justify-content-between">
     <div class="card text-danger" style="width: 15rem;">
         <div class="card-body d-flex align-items-center justify-content-between">
             <div>

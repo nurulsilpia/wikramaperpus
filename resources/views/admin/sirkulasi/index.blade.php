@@ -80,8 +80,13 @@
                     
                     $today = new DateTime("now");
                     $lengt = $today->diff($kembali)->format('%a');
-                    
-                    echo 'Rp ' . $lengt * 500;
+
+                    if ($today > $kembali) {
+                      echo 'Rp. ' . $lengt * 500;
+                    }else {
+                      echo 'Rp. 0';
+                    }
+
                   ?>
                 </td>
                 <td class="text-center">

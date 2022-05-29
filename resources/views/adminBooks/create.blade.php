@@ -11,7 +11,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
-                    <select class="form-select" name="category_id" aria-label="Default select example">
+                    <select class="form-control" name="category_id" aria-label="Default select example">
                         @foreach ($categories as $category)
                             @if (old('category_id') == $category->id)
                                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>

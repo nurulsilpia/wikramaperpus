@@ -27,9 +27,9 @@
           <tbody>
             @if (Auth::user()->name)
                 
-            @foreach (DB::table('sirkulasis')->get() as $key => $item)
+            @foreach ($sirkulasis as $item)
               <tr>
-                  <td>{{ $key + 1 }}</td>
+                  <td>{{ $loop->iteration }}</td>
                   <td>{{ DB::table('users')->where('id', $item->user_id)->first()->name }}</td>
                   <td>{{ $item->kode_item }}</td>
                   <td>{{ DB::table('books')->where('id', $item->book_id)->first()->judul }}</td>
@@ -62,8 +62,12 @@
                       
                       $today = new DateTime("now");
                       $lengt = $today->diff($kembali)->format('%a');
-                      
-                      echo 'Rp ' . $lengt * 500;
+
+                      if ($today > $kembali) {
+                        echo 'Rp. ' . $lengt * 500;
+                      }else {
+                        echo 'Rp. 0';
+                      }
                     @endphp
                   </td>
               </tr>

@@ -78,7 +78,7 @@ Route::get('/galery', [GaleryController::class, 'index']);
 //         "active" => "sirkulasi/sirkulasi"
 //     ]);
 // });
-Route::get('/sirkulasi', [SirkulasiUserController::class, 'index']);
+Route::get('/sirkulasi/{id}', [SirkulasiUserController::class, 'index'])->name('sirkulasi');
 
 Route::get('baca/{id}', function ($id) {
 

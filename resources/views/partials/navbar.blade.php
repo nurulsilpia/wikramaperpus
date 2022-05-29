@@ -13,14 +13,14 @@
                 <li class="nav__item"><a href="/galery" class="nav__link {{ Request::is('galery*') ? 'active' : '' }}">Galery</a></li>
 
                 @if (auth()->user())
-                    <li class="nav__item"><a href="/sirkulasi" class="nav__link {{ Request::is('sirkulasi*') ? 'active' : '' }}">Sirkulasi</a></li>
+                    <li class="nav__item"><a href="{{ Route('sirkulasi', auth()->user()->id) }}" class="nav__link {{ Request::is('sirkulasi*') ? 'active' : '' }}">Sirkulasi</a></li>
                 @endif
                 
                 @auth
                     <li class="nav__item">
                         <div class="dropdown">
-                            <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-circle"></i> Hi, {{ auth()->user()->name }}
+                            <a class="btn btn-primary btn-sm dropdown-toggle d-inline-block text-truncate" style="max-width: 100px;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> {{ auth()->user()->name }}
                             </a>
                         
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">

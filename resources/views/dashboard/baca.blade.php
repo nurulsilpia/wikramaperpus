@@ -69,7 +69,7 @@
         {{-- <iframe src="{{ asset('storage/' . $data->isi) }}" width="100%" height="100%"> --}}
             <object width="100%" height="1000" type="application/pdf" data="{{ asset('storage/' . $data->isi) }}">
                 {{-- if the book doesn't have pdf --}}
-                <div class="card">
+                <div class="card d-flex align-items-center">
                     <div class="card-body text-center">
                         <i class='bx bxs-message-error bx-tada' style="font-size: 2rem;"></i> Maaf, buku ini adalah buku fisik. Silahkan kunjungi Perpustakaan Wikrama...
                     </div>

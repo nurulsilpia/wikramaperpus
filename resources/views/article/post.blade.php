@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <section class="section">
-    <div class="section-header">
+    <div class="section-header card p-3">
         <div class="row justify-content-center mb-5">
             <div class="col-md-8">
                 <h2 class="mb-4">{{ $post->title }}</h2>
@@ -17,11 +17,11 @@
                     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid">
                 @endif
 
-                <article class="my-3 fs-5">
+                <article class="my-3 fs-5 text-justify">
                     {!! $post->body !!}
                 </article>
 
-                <a href="/posts" class="d-block mt-3">Back To Posts</a>
+                <a href="/posts" class="d-block mt-5 text-italic text-secondary">Back To Posts <<</a>
             </div>
         </div>
     </div>

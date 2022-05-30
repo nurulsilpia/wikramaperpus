@@ -43,9 +43,9 @@
               <li><a class="nav-link" href="/admin/jenis-books">Jenis Buku</a></li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
+          {{-- <li class="nav-item dropdown">
             <a href="/admin/siswa" class="nav-link"><i class="bi bi-person-circle"></i><span>Data Siswa</span></a>
-          </li>
+          </li> --}}
           <li class="nav-item dropdown">
             <a href="/admin/user" class="nav-link"><i class="bi bi-person-plus-fill"></i><span>Data User</span></a>
           </li>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeUserController extends Controller
@@ -14,9 +17,20 @@ class HomeUserController extends Controller
      */
     public function index()
     {
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+
+        if (request('author')) {
+            $author = User::firstWhere('username', request('author'));
+            $title = ' in ' . $author->name;
+        }
+
         return view('dashboard.home', [
             'newBooks' => Book::latest()->orderBy('id', 'DESC')->paginate(4)->withQueryString(),
-            'fmsBooks' => Book::latest()->orderBy('jumlah_baca', 'DESC')->paginate(4)->withQueryString()
+            'fmsBooks' => Book::latest()->orderBy('jumlah_baca', 'DESC')->paginate(3)->withQueryString(),
+            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(4)->withQueryString()
         ]);
     }
 

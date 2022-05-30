@@ -1,16 +1,16 @@
 @extends('layouts.main')
 @section('content')
 
-        <div class="banner bg-white">
-            <img src="/assets/img/baner.png" class="img-fluid mt-5" width="1200" height="300px" alt="thumbnail">
-        </div>
+<div class="banner bg-white">
+    <img src="/assets/img/baner.png" class="img-fluid mt-5" width="1200" height="300px" alt="thumbnail">
+</div>
 
-        <div class="banner bg-white  "><br><br>
-            <p class="text-center" style="font-family-roboto">Kami Menyediakan Layanan Perpustakaan berupa E-book dan informasi terbaru mengenai perpustakaan Wikrama Indonesia <br>yang bermanfaat khususnya bagi civitas akademik SMK Wikrama Indonesia</p><br><br>
-        </div>
+<div class="banner bg-white  "><br><br>
+    <p class="text-center" style="font-family-roboto">Kami Menyediakan Layanan Perpustakaan berupa E-book dan informasi terbaru mengenai perpustakaan Wikrama Indonesia <br>yang bermanfaat khususnya bagi civitas akademik SMK Wikrama Indonesia</p><br><br>
+</div>
 
-        <section class="section">
-        <div class="buku-terbaru my-">
+<section class="section">
+        <div class="buku-terbaru">
             <h3 class="text-dark fw-bolder">Buku Terbaru</h3><br>
             <div class="d-flex">
                 {{-- @foreach (DB::table('books')->orderBy('id', 'DESC')->limit(4)->get() as $item) --}}
@@ -49,12 +49,42 @@
                </div>
         </div><br><br>
 
-        <div class="peminat-terbanyak">
+        <div class="buku-terbaru">
+            <h3 class="text-dark fw-bolder">Berita Terbaru</h3><br>
+            <div class="row">
+                @foreach ($posts->skip(1) as $post)
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
+                                <a href="/posts?category={{ $post->category->slug }}" class="text-white">{{ $post->category->name }}</a>
+                            </div>
+                            @if ($post->image)
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}" class="img-fluid">
+                            @else
+                                <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+                            @endif
+                            <div class="card-body">
+                            <h5 class="card-title">{{ $post->title }}</h5>
+                                <p class="fw-bold">
+                                    <small class="text-muted">
+                                        By. <a href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a> {{ $post->created_at->diffForHumans() }}
+                                    </small>
+                                </p>
+                            <p class="card-text mb-3">{{ $post->excerpt }}</p>
+                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- <div class="peminat-terbanyak">
             <h3 class="text-dark fw-bolder">Buku Peminat Terbanyak</h3><br>
             <div class="d-flex">
 
                 {{-- @foreach (DB::table('books')->orderBy('jumlah_baca', 'DESC')->limit(4)->get() as $item) --}}
-                @foreach ($fmsBooks as $item)
+                {{-- @foreach ($fmsBooks as $item)
                     <div class="mr-5">
                         <div class="card shadow" style="width: 15rem;">
                             <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
@@ -80,15 +110,15 @@
                             </div>
                         </div>
                     </div>
-                 @endforeach
+                @endforeach --}}
             </div>
 
             {{-- Pagination buku minat terbanyak --}}
-            <div class="d-flex justify-content-center mt-3">
+            {{-- <div class="d-flex justify-content-center mt-3">
                 {{ $newBooks->links() }}
-            </div>
+            </div> --}}
         </div>
-        <br><br>
+        
         <div class="banner bg-white mb-5">
         <div class="row">
             <div class="col-5 sm-7 mt-2">

@@ -32,11 +32,11 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->judul }}</h5>
                                 <p class="card-text">{{ $item->pengarang }}</p>
-                                <div class="d-flex align-items-center">
+                                {{-- <div class="d-flex align-items-center">
                                     <ion-icon name="eye-outline"></ion-icon>
                                     <p class="ms-1">{{ $item->jumlah_baca }}</p>
-                                </div><br>
-                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
+                                </div><br> --}}
+                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm mt-3">Baca</a>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
             <div id="chart" class="rounded "></div>
             </div>
             <div class="col-6 sm-6 ml-3">
-        <video class="mb-1 mt-3 pl-3" width="600" height="350" autoplay loop muted>
+        <video class="mb-1 mt-3 pl-3" width="600" height="350" autoplay loop muted controls>
             <source src="/assets/video/wk.mp4" type="video/mp4" width="700" height="350">
         </video>
         </div>

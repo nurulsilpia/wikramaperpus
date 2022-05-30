@@ -7,21 +7,19 @@
         </div>
 
         @if(session()->has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ session('success')}}
-        </div>
+          <div class="alert alert-success" role="alert">
+              {{ session('success')}}
+          </div>
         @endif
 
         @if(session()->has('delete'))
-        <div class="alert alert-danger" role="alert">
-            {{ session('delete')}}
-        </div>
+          <div class="alert alert-danger" role="alert">
+              {{ session('delete')}}
+          </div>
         @endif
         
         <div class="table-responsive">
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#create">
-                Add New User
-            </button>
+          <a href="/admin/user/create" class="btn btn-primary mb-3">Add Data</a>
 
             <table class="table table-striped table-sm" id="tableAll">
                 <thead>
@@ -72,4 +70,5 @@
         </div>
     </div>
 </section>
+
 @endsection

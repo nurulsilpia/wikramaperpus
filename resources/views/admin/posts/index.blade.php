@@ -19,7 +19,7 @@
       </div>
     @endif
 
-    <div class="table-responsive col-lg-10">
+    <div class="table-responsive">
       <a href="/admin/posts/create" class="btn btn-primary mb-3">Create new post</a>
         <table class="table table-striped table-sm" id="tableAll">
           <thead>

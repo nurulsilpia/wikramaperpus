@@ -26,7 +26,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dataUser.create', [
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -37,7 +39,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        User::create($validatedData);
+
+        return redirect('/admin/user')->with('success', 'User has been added');
     }
 
     /**

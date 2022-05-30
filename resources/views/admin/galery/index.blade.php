@@ -7,12 +7,12 @@
         </div>
         {{-- Validate --}}
         @if(session()->has('success'))
-          <div class="alert alert-success col-lg-10" role="alert">
+          <div class="alert alert-success" role="alert">
               {{ session('success')}}
           </div>
         @endif
         @if(session()->has('danger'))
-          <div class="alert alert-danger col-lg-10" role="alert">
+          <div class="alert alert-danger" role="alert">
               {{ session('danger')}}
           </div>
         @endif
@@ -30,7 +30,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">Judul</th>
                     <th scope="col">Deskripsi</th>
-                    <th colspan="2" scope="col">Action</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -48,13 +48,30 @@
                     </td>
                     <td>{{ $galery->judul }}</td>
                     <td>{{ $galery->deskripsi }}</td>
-                    <td>
+                    {{-- <td>
                       <a href="/admin/galery/{{ $galery->judul }}/edit" class="badge bg-warning text-white my-1"><i class="bi bi-pencil-square"></i></a>
                           <form action="/admin/galery/{{ $galery->judul }}" method="post" class="d-inline">
                             @method('delete')
                             @csrf
                             <button class="badge bg-danger border-0 text-white my-1" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i></button>
                           </form>
+                    </td> --}}
+                    <td>
+                      <div class="btn-group dropstart">
+                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{-- <i class="bi bi-three-dots-vertical"></i> --}}
+                        </button>
+                        <ul class="dropdown-menu px-3">
+                          <li class="mb-1 text-center"><a class="dropdown-item btn btn-warning text-white" href="/admin/galery/{{ $galery->judul }}/edit"><i class="bi bi-pencil-square"></i> Edit Data</a></li>
+                          <li class="text-center">
+                            <form action="/admin/galery/{{ $galery->judul }}" method="post" class="d-inline">
+                              @method('delete')
+                              @csrf
+                              <button style="width: 100%;" class="btn btn-danger border-0 text-white" onclick="return confirm('Are you sure?')"><i class="bi bi-trash-fill"></i> Delete Data</button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
                     </td>
                   </tr>
                   @endforeach

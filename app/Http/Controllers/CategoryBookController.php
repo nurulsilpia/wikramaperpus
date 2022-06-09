@@ -42,7 +42,8 @@ class CategoryBookController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'codeCategory' => 'required',
         ]);
 
         CategoryBook::create($validatedData);
@@ -85,6 +86,7 @@ class CategoryBookController extends Controller
     {
         $rules = [
             'name' => "required",
+            'codeCategory' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
@@ -103,6 +105,6 @@ class CategoryBookController extends Controller
     public function destroy(CategoryBook $categoryBook )
     {
         CategoryBook::destroy($categoryBook->id);
-        return redirect('/admin/category-books')->with('delete', 'post berhasil dihapus');
+        return redirect('/admin/category-books')->with('delete', 'Category book has been deleted!');
     }
 }

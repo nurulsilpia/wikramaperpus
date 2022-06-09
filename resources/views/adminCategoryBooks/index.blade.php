@@ -8,18 +8,18 @@
     </div>
 
     @if(session()->has('success'))
-    <div class="alert alert-success col-lg-5" role="alert">
+    <div class="alert alert-success col-lg-8" role="alert">
         {{ session('success')}}
     </div>
     @endif
 
     @if(session()->has('delete'))
-    <div class="alert alert-danger col-lg-5" role="alert">
+    <div class="alert alert-danger col-lg-8" role="alert">
         {{ session('delete')}}
     </div>
     @endif
 
-    <div class="table-responsive col-lg-5">
+    <div class="table-responsive col-lg-8">
       <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#create">
         Create new Category
       </button>
@@ -28,6 +28,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
+              <th scope="col">Kode Kategori</th>
               <th scope="col">Kategori</th>
               <th scope="col">Action</th>
             </tr>
@@ -36,6 +37,7 @@
             @foreach( $categoryBooks as $categoryBook )
             <tr>
                 <td> {{ $loop->iteration }} </td>
+                <td> {{ $categoryBook->codeCategory }} </td>
                 <td> {{ $categoryBook->name}}</td>
                 <td>
                   <a href="/admin/category-books/{{ $categoryBook->id }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
@@ -67,6 +69,15 @@
             <label for="name" class="form-label">Nama Kategori</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('name') }}">
             @error('name')
+              <div class="invalid-feedback">
+                {{ $message }}
+               </div>
+            @enderror
+          </div>
+          <div class="">
+            <label for="codeCategory" class="form-label">Kode Kategori</label>
+            <input type="text" class="form-control @error('codeCategory') is-invalid @enderror" id="codeCategory" name="codeCategory" required autofocus value="{{ old('codeCategory') }}">
+            @error('codeCategory')
               <div class="invalid-feedback">
                 {{ $message }}
                </div>

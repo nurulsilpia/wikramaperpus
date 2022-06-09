@@ -16,6 +16,7 @@ class CreateJenisBooksTable extends Migration
         Schema::create('jenis_books', function (Blueprint $table) {
             $table->id();
             $table->string('jenis');
+            $table->string('codeJenis')->unique();
             $table->timestamps();
         });
     }

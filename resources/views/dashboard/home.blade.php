@@ -10,12 +10,12 @@
 </div>
 
 <section class="section">
-        <div class="buku-terbaru">
+    <div class="buku-terbaru">
             <h3 class="text-dark fw-bolder">Buku Terbaru</h3><br>
-            <div class="d-flex">
+            <div class="d-flex flex-wrap justify-content-center">
                 {{-- @foreach (DB::table('books')->orderBy('id', 'DESC')->limit(4)->get() as $item) --}}
                 @foreach ($newBooks as $item)
-                    <div class="mr-5">
+                    <div class="m-3">
                         <div class="card shadow" style="width: 15rem;">
                             <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
                                 <p class="text-white">{{ $item->jenis->jenis }}</p>
@@ -78,59 +78,18 @@
                 @endforeach
             </div>
         </div>
-
-        {{-- <div class="peminat-terbanyak">
-            <h3 class="text-dark fw-bolder">Buku Peminat Terbanyak</h3><br>
-            <div class="d-flex">
-
-                {{-- @foreach (DB::table('books')->orderBy('jumlah_baca', 'DESC')->limit(4)->get() as $item) --}}
-                {{-- @foreach ($fmsBooks as $item)
-                    <div class="mr-5">
-                        <div class="card shadow" style="width: 15rem;">
-                            <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)">
-                                <p class="text-white">{{ $item->jenis->jenis }}</p>
-                            </div>
-
-                                @if ($item->image)
-                                    <div style="max-height: 400px; overflow: hidden;">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
-                                    </div>
-                                @else
-                                    <img src="assets/img/cover.png" alt="{{ $item->judul }}" class="card-img-top img-fluid rounded" style="height: 300px; object-fit: fill;">
-                                @endif
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $item->judul }}</h5>
-                                <p class="card-text">{{ $item->pengarang }}</p>
-                                <div class="d-flex align-items-center">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                    <p class="ms-1">{{ $item->jumlah_baca }}</p>
-                                </div><br>
-                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm">Baca</a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach --}}
-            </div>
-
-            {{-- Pagination buku minat terbanyak --}}
-            {{-- <div class="d-flex justify-content-center mt-3">
-                {{ $newBooks->links() }}
-            </div> --}}
-        </div>
         
-        <div class="banner bg-white mb-5">
-        <div class="row">
-            <div class="col-5 sm-7 mt-2">
-            <div id="chart" class="rounded "></div>
+        <div class="banner bg-white mb-5 d-flex flex-wrap">
+            <div class="row">
+                <div class="col-5 md-7 mt-2">
+                    <div id="chart" class="rounded "></div>
+                </div>
+                <div class="col-6 md-6 ml-3">
+                    <video class="mb-1 mt-3 pl-3" width="600" height="350" autoplay loop muted controls>
+                        <source src="/assets/video/wk.mp4" type="video/mp4" width="700" height="350">
+                    </video>
+                </div>
             </div>
-            <div class="col-6 sm-6 ml-3">
-        <video class="mb-1 mt-3 pl-3" width="600" height="350" autoplay loop muted controls>
-            <source src="/assets/video/wk.mp4" type="video/mp4" width="700" height="350">
-        </video>
-        </div>
-        </div>
-
         </div>
     </div>
 </section>

@@ -28,6 +28,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
+              <th scope="col">Kode Jenis</th>
               <th scope="col">Jenis</th>
               <th scope="col">Action</th>
             </tr>
@@ -36,7 +37,8 @@
             @foreach( $jenises as $jenis )
             <tr>
                 <td> {{ $loop->iteration }} </td>
-                <td> {{ $jenis->jenis}}</td>
+                <td> {{ $jenis->codeJenis}}</td>
+                <td> {{ $jenis->jenis}} </td>
                 <td>
                   <a href="/admin/jenis-books/{{ $jenis->id }}/edit" class="badge bg-warning text-white"><i class="bi bi-pencil-square"></i></a>
                       <form action="/admin/jenis-books/{{ $jenis->id }}" method="post" class="d-inline">
@@ -63,7 +65,7 @@
       <div class="modal-body">
         <form action="/admin/jenis-books" method="POST">
           @csrf
-          <div class="">
+          <div class="mb-3">
             <label for="jenis" class="form-label">Jenis Buku</label>
             <input type="text" class="form-control @error('jenis') is-invalid @enderror" id="jenis" name="jenis" required autofocus value="{{ old('jenis') }}">
             @error('jenis')
@@ -72,7 +74,15 @@
                </div>
             @enderror
           </div>
-          <br>
+          <div class="mb-3">
+            <label for="codeJenis" class="form-label">Kode Jenis Buku</label>
+            <input type="text" class="form-control @error('codeJenis') is-invalid @enderror" id="codeJenis" name="codeJenis" required autofocus value="{{ old('codeJenis') }}">
+            @error('codeJenis')
+              <div class="invalid-feedback">
+                {{ $message }}
+               </div>
+            @enderror
+          </div>
           <button type="submit" class="btn btn-primary">Create jenis</button>
           <button type="button" class="btn btn-dark text-white mx-3" data-bs-dismiss="modal">Close</button>
         </form>

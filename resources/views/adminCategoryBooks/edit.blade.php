@@ -19,6 +19,15 @@
                         </div>
                     @enderror
                 </div>
+                <div class="mb-3">
+                    <label for="codeCategory" class="form-label">Code Category</label>
+                    <input type="text" class="form-control @error('codeCategory') is-invalid @enderror" id="codeCategory" name="codeCategory" required autofocus value="{{ old('codeCategory', $categoryBook->codeCategory) }}">
+                    @error('codeCategory')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
 
                 <button type="submit" class="btn btn-primary">Update Category</button>
             </form>

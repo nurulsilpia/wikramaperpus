@@ -38,7 +38,8 @@ class JenisBookController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'jenis' => 'required'
+            'jenis' => 'required',
+            'codeJenis' => 'required'
         ]);
 
         JenisBook::create($validatedData);
@@ -81,6 +82,7 @@ class JenisBookController extends Controller
     {
         $rules = [
             'jenis' => "required",
+            'codeJenis' => 'required'
         ];
 
         $validatedData = $request->validate($rules);

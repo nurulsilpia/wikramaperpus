@@ -57,23 +57,28 @@ class DatabaseSeeder extends Seeder
 
         //Category buku
         CategoryBook::create([
-            'name' => 'Novel'
+            'name' => 'Novel',
+            'codeCategory' => 'nvl'
         ]);
 
         CategoryBook::create([
-            'name' => 'Buku Pembelajaran'
+            'name' => 'Buku Pembelajaran',
+            'codeCategory' => 'bp'
         ]);
 
         CategoryBook::create([
-            'name' => 'Biografi'
+            'name' => 'Biografi',
+            'codeCategory' => 'brf'
         ]);
 
         JenisBook::create([
-            'jenis' => 'Ebook'
+            'jenis' => 'Ebook',
+            'codeJenis' => 'E'
         ]);
 
         JenisBook::create([
-            'jenis' => 'Buku Fisik'
+            'jenis' => 'Buku Fisik',
+            'codeJenis' => 'F'
         ]);
 
         Book::create([

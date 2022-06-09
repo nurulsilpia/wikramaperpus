@@ -18,7 +18,7 @@
                 
                 @auth
                     <li class="nav__item">
-                        <div class="dropdown">
+                        <div class="dropdown nav__link">
                             <a class="btn btn-primary btn-sm dropdown-toggle d-inline-block text-truncate" style="max-width: 100px;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-person-circle"></i> {{ auth()->user()->name }}
                             </a>
@@ -39,7 +39,7 @@
                         </div>
                     </li>
                 @else
-                    <li class="nav__item"><a href="/login" class="btn btn-primary btn-sm ml-5"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                    <li class="nav__item"><a href="/login" class="btn btn-primary btn-sm"><i class="bi bi-box-arrow-right"></i> Login</a></li>
                 @endauth
             </ul>
                 

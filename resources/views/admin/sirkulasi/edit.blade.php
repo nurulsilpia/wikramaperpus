@@ -64,7 +64,7 @@
                 <div class="row">
                 <div class="mb-3 col-sm-5">
                     <label for="tanggal_pinjam" class="form-label">Tanggal Pinjam</label>
-                    <input type="date" class="form-control @error('tanggal_pinjam') is-invalid @enderror" id="tanggal_pinjam" name="tanggal_pinjam" required autofocus value="{{ old('tanggal_pinjam', $sirkulasi->tanggal_pinjam) }}">
+                    <input type="date" class="form-control @error('tanggal_pinjam') is-invalid @enderror" id="tanggal_pinjam" name="tanggal_pinjam" required value="{{ old('tanggal_pinjam', $sirkulasi->tanggal_pinjam) }}">
                     @error('tanggal_pinjam')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -74,7 +74,7 @@
                 
                     <div class="mb-3 col-sm-5">
                     <label for="tanggal_kembali" class="form-label">Tanggal Kembali</label>
-                    <input type="date" class="form-control @error('tanggal_kembali') is-invalid @enderror" id="tanggal_kembali" name="tanggal_kembali" required autofocus value="{{ old('tanggal_kembali', $sirkulasi->tanggal_kembali) }}">
+                    <input type="date" class="form-control @error('tanggal_kembali') is-invalid @enderror" id="tanggal_kembali" name="tanggal_kembali" required value="{{ old('tanggal_kembali', $sirkulasi->tanggal_kembali) }}">
                     @error('tanggal_kembali')
                         <div class="invalid-feedback">
                             {{ $message }}

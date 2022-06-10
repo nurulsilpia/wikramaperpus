@@ -72,7 +72,7 @@
                 <div class="row">
                 <div class="mb-3 col-sm-5">
                     <label for="tanggal_pinjam" class="form-label">Tanggal Pinjam</label>
-                    <input type="date" class="form-control @error('tanggal_pinjam') is-invalid @enderror" id="tanggal_pinjam" name="tanggal_pinjam" required value="{{ old('tanggal_pinjam') }}">
+                    <input type="date" class="form-control @error('tanggal_pinjam') is-invalid @enderror" id="tanggal_pinjam" name="tanggal_pinjam" required value="<?= date('Y-m-d'); ?>">
                     @error('tanggal_pinjam')
                         <div class="invalid-feedback">
                             {{ $message }}

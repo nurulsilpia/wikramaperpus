@@ -53,8 +53,8 @@
                     <ul class="list-unstyled text-muted">
                         <li><a href="">SMK Wikrama Bogor</a></li>
                         <li><a href="">SMK Wikrama 1 Garut</a></li>
-                        <li><a href="#">CV IDS Rumah Pendidikan</a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="#">SMK Wikrama 1 Banjarmasin</a></li>
+                        <li class="mt-3"><a href="https://kejar.id/">CV IDS Rumah Pendidikan</a></li>
                     </ul>
                     <p class="small text-primary mb-0">&copy; Copyrights. 2018 Perpustakaan SMK Wikrama </p>
                 </div>

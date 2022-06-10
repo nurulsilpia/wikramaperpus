@@ -34,10 +34,10 @@
                   <div class="col-lg-3 col-md-6">
                       <h5 class="h4 text-white">Mitra Kami  </h5><br>
                       <ul class="list-unstyled text-muted">
-                          <li><a href="">SMK Wikrama Bogor</a></li>
-                          <li><a href="">SMK Wikrama 1 Garut</a></li><br>
-                          <li><a href="#">CV IDS Rumah Pendidikan</a></li>
-                          <li><a href="#"></a></li>
+                          <li><a href="#">SMK Wikrama Bogor</a></li>
+                          <li><a href="#">SMK Wikrama 1 Garut</a></li>
+                          <li><a href="#">SMK Wikrama 1 Banjarmasin</a></li>
+                          <li class="mt-3"><a href="https://kejar.id/">CV IDS Rumah Pendidikan</a></li>
                       </ul>
 
                   </div>

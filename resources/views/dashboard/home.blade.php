@@ -32,11 +32,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->judul }}</h5>
                                 <p class="card-text">{{ $item->pengarang }}</p>
-                                {{-- <div class="d-flex align-items-center">
-                                    <ion-icon name="eye-outline"></ion-icon>
-                                    <p class="ms-1">{{ $item->jumlah_baca }}</p>
-                                </div><br> --}}
-                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm mt-3">Baca</a>
+                                <a href="{{ route('baca',['id'=>$item->id]) }}" class="btn btn-primary btn-sm mt-3">Read</a>
                             </div>
                         </div>
                     </div>

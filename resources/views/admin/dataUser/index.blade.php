@@ -32,7 +32,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach( $users as $user)
+                  @foreach( $users->skip(1) as $user)
                   <tr>
                       <td> {{ $loop->iteration }} </td>
                       <td> {{ $user->name }} </td>

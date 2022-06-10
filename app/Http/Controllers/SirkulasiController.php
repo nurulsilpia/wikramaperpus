@@ -22,7 +22,7 @@ class SirkulasiController extends Controller
     {
         
         return view('admin.sirkulasi.index',[
-            'sirkulasis' => Sirkulasi::all()
+            'sirkulasis' => Sirkulasi::all()->sortByDesc('id')
         ]);
     }
 
@@ -33,11 +33,26 @@ class SirkulasiController extends Controller
      */
     public function create()
     {
+        // $tglPinjam = Carbon::now()->format('d-m-y');
+        $now = Carbon::now();
+        $dmy = $now->day . $now->month . $now->year;
+        $cek = Sirkulasi::count();
+        if ($cek == 0) {
+            $urut = 1000000001;
+            $kode = 'PJM/'.$dmy.'/'.$urut;
+        } else {
+            $get = Sirkulasi::all()->last();
+            $urut = (int)substr($get->kode_pinjam, -10) + 1;
+            $kode = 'PJM/'.$dmy.'/'. $urut;
+        }
+        
         return view('admin.sirkulasi.create', [
             'sirkulasis' => Sirkulasi::all(),
             // 'siswas' => DataSiswa::all(),
             'users' => User::all(),
-            'books' => Book::all()
+            'books' => Book::all(),
+            // 'tglPinjam' => $tglPinjam
+            'kode' => $kode,
         ]);
     }
 

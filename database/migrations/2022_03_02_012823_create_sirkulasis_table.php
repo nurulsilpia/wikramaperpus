@@ -23,7 +23,8 @@ class CreateSirkulasisTable extends Migration
             // $table->foreign('siswa_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->char('kode_item');
-            $table->char('kode_pinjam');
+            $table->char('kode_pinjam')->autoIncrement();
+            // $table->primary('kode_pinjam');
             $table->date('tanggal_pinjam');
             $table->date('tanggal_kembali');
             $table->string('keterangan');
